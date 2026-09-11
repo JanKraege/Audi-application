@@ -411,41 +411,43 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
 
 
 
-/* ===== V5: CLEAN DARK ECOSYSTEM ===== */
-.ecosystem-red .clean-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:26px;align-items:stretch}
-.ecosystem-red .emap-clean{position:relative;min-height:760px;padding:28px;border-radius:30px;overflow:hidden;background:radial-gradient(circle at 50% 42%,rgba(215,25,32,.10),transparent 18%),linear-gradient(180deg,#07090d 0%,#0b0d12 48%,#090b10 100%);border:1px solid rgba(255,255,255,.08);box-shadow:0 28px 80px rgba(0,0,0,.34)}
-.ecosystem-red .emap-clean:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.02),transparent 46%);pointer-events:none}
-.ecosystem-red .emap-head{position:absolute;left:22px;top:20px;z-index:4}
+/* ===== V6: CLEAN FULL-WIDTH DARK ECOSYSTEM ===== */
+.ecosystem-red .clean-grid.fullwidth-layout{display:grid;grid-template-columns:1fr;gap:24px}
+.ecosystem-red .emap-wide{position:relative;min-height:860px;padding:30px;border-radius:30px;overflow:hidden;background:radial-gradient(circle at 50% 44%,rgba(215,25,32,.11),transparent 20%),linear-gradient(180deg,#07090d 0%,#0b0d12 48%,#090b10 100%);border:1px solid rgba(255,255,255,.08);box-shadow:0 28px 80px rgba(0,0,0,.34)}
+.ecosystem-red .emap-wide:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.02),transparent 46%);pointer-events:none}
+.ecosystem-red .emap-head{position:absolute;left:26px;top:22px;z-index:4}
 .ecosystem-red .emap-head span{display:inline-flex;padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.04);font-size:.80rem;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#f3f5f8}
 .ecosystem-red .map-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1}
-.ecosystem-red .map-lines circle,.ecosystem-red .map-lines line{fill:none;stroke:rgba(215,25,32,.34);stroke-width:1.65}
-.ecosystem-red .map-lines line{stroke:rgba(255,255,255,.12)}
-.ecosystem-red .core-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:220px;height:220px;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:22px;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.07),rgba(215,25,32,.17) 40%,rgba(215,25,32,.06) 70%,rgba(215,25,32,.02) 100%);border:1px solid rgba(255,96,103,.42);box-shadow:0 0 0 14px rgba(215,25,32,.04),0 20px 40px rgba(0,0,0,.28);color:#fff}
-.ecosystem-red .core-center small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#ff7b81;margin-bottom:8px}
-.ecosystem-red .core-center strong{font-size:1.55rem;line-height:1.15}
-.ecosystem-red .clean-node{position:absolute;z-index:3;width:210px;padding:16px 16px 14px;border-radius:18px;background:rgba(10,13,19,.90);border:1px solid rgba(255,255,255,.09);box-shadow:0 16px 34px rgba(0,0,0,.24)}
-.ecosystem-red .clean-node:before{content:"";position:absolute;inset:0;border-radius:18px;padding:1px;background:linear-gradient(135deg,rgba(215,25,32,.30),rgba(255,255,255,.03));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.ecosystem-red .clean-node strong{display:block;font-size:1rem;line-height:1.15;color:#fff;margin-bottom:6px}
-.ecosystem-red .clean-node span{display:block;font-size:.79rem;line-height:1.45;color:#b8c0ce}
-.ecosystem-red .microtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ecosystem-red .map-lines circle,.ecosystem-red .map-lines line{fill:none;stroke-width:1.7}
+.ecosystem-red .map-lines circle{stroke:rgba(215,25,32,.34)}
+.ecosystem-red .map-lines line{stroke:rgba(255,255,255,.14)}
+.ecosystem-red .wide-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;width:250px;height:250px;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 35% 35%,rgba(255,255,255,.08),rgba(215,25,32,.18) 40%,rgba(215,25,32,.07) 72%,rgba(215,25,32,.02) 100%);border:1px solid rgba(255,96,103,.45);box-shadow:0 0 0 16px rgba(215,25,32,.04),0 20px 40px rgba(0,0,0,.28);color:#fff}
+.ecosystem-red .wide-core small{font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#ff7b81;margin-bottom:8px}
+.ecosystem-red .wide-core strong{font-size:1.7rem;line-height:1.15}
+.ecosystem-red .clean-node{position:absolute;z-index:3;width:255px;padding:18px 18px 14px;border-radius:20px;background:rgba(10,13,19,.92);border:1px solid rgba(255,255,255,.09);box-shadow:0 16px 34px rgba(0,0,0,.24)}
+.ecosystem-red .clean-node:before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(135deg,rgba(215,25,32,.30),rgba(255,255,255,.03));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.ecosystem-red .clean-node strong{display:block;font-size:1.12rem;line-height:1.18;color:#fff;margin-bottom:8px}
+.ecosystem-red .clean-node span{display:block;font-size:.84rem;line-height:1.5;color:#b8c0ce}
+.ecosystem-red .microtags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
 .ecosystem-red .microtags em{font-style:normal;font-size:.68rem;font-weight:800;letter-spacing:.02em;color:#d7dee9;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-.ecosystem-red .n1{left:6%;top:14%}
-.ecosystem-red .n2{left:39%;top:9%;transform:translateX(-50%)}
-.ecosystem-red .n3{right:6%;top:14%}
-.ecosystem-red .n4{left:4%;top:41%}
-.ecosystem-red .n5{right:4%;top:41%}
-.ecosystem-red .n6{left:6%;bottom:11%}
-.ecosystem-red .n7{left:39%;bottom:7%;transform:translateX(-50%)}
-.ecosystem-red .n8{right:6%;bottom:11%}
-.ecosystem-red .clean-copy{display:grid;gap:16px}
-.ecosystem-red .ecocard{border-radius:18px;padding:22px;background:linear-gradient(180deg,#11151d,#0d1017)}
-.ecosystem-red .ecocard h3{font-size:1rem;margin:0 0 8px;color:#fff}
-.ecosystem-red .ecocard p{font-size:.92rem;line-height:1.58;margin:0;color:#bac2cf}
-.ecosystem-red .ecocard.emphasis{background:linear-gradient(135deg,rgba(215,25,32,.20),#0d1017 55%);border-color:rgba(215,25,32,.28)}
+.ecosystem-red .pos-ai{left:70px;top:100px}
+.ecosystem-red .pos-journey{right:70px;top:100px}
+.ecosystem-red .pos-crm{left:70px;top:295px}
+.ecosystem-red .pos-pricing{right:70px;top:295px}
+.ecosystem-red .pos-omni{left:90px;bottom:80px}
+.ecosystem-red .pos-exec{left:50%;bottom:55px;transform:translateX(-50%)}
+.ecosystem-red .pos-db{right:90px;bottom:80px}
+.ecosystem-red .clean-copy-below{display:grid;grid-template-columns:1fr;gap:16px}
+.ecosystem-red .ecocard{border-radius:20px;padding:24px 26px;background:linear-gradient(180deg,#11151d,#0d1017);border:1px solid rgba(255,255,255,.08)}
+.ecosystem-red .ecocard h3{font-size:1.15rem;margin:0 0 10px;color:#fff}
+.ecosystem-red .ecocard p{font-size:1rem;line-height:1.68;margin:0;color:#bac2cf;max-width:1100px}
+.ecosystem-red .ecocard.emphasis{background:linear-gradient(135deg,rgba(215,25,32,.20),#0d1017 58%);border-color:rgba(215,25,32,.28)}
 .ecosystem-red .head .kicker{color:#d71920}
 .ecosystem-red .head .kicker:before{background:#d71920}
-@media(max-width:1180px){.ecosystem-red .clean-grid{grid-template-columns:1fr}.ecosystem-red .emap-clean{min-height:760px}}
-@media(max-width:760px){.ecosystem-red .emap-clean{min-height:1120px;padding:20px}.ecosystem-red .core-center{width:180px;height:180px}.ecosystem-red .core-center strong{font-size:1.25rem}.ecosystem-red .clean-node{width:170px;padding:12px}.ecosystem-red .clean-node strong{font-size:.88rem}.ecosystem-red .clean-node span{font-size:.72rem}.ecosystem-red .n1{left:4%;top:12%}.ecosystem-red .n2{left:50%;top:4%;transform:translateX(-50%)}.ecosystem-red .n3{right:4%;top:12%}.ecosystem-red .n4{left:2%;top:33%}.ecosystem-red .n5{right:2%;top:33%}.ecosystem-red .n6{left:4%;bottom:14%}.ecosystem-red .n7{left:50%;bottom:3%;transform:translateX(-50%)}.ecosystem-red .n8{right:4%;bottom:14%}}
+@media(max-width:1250px){.ecosystem-red .emap-wide{min-height:930px}.ecosystem-red .clean-node{width:230px}.ecosystem-red .pos-ai{left:40px}.ecosystem-red .pos-journey{right:40px}.ecosystem-red .pos-crm{left:40px}.ecosystem-red .pos-pricing{right:40px}.ecosystem-red .pos-omni{left:55px}.ecosystem-red .pos-db{right:55px}}
+@media(max-width:980px){.ecosystem-red .emap-wide{min-height:1200px;padding:22px}.ecosystem-red .wide-core{width:200px;height:200px}.ecosystem-red .wide-core strong{font-size:1.35rem}.ecosystem-red .clean-node{width:190px;padding:14px}.ecosystem-red .clean-node strong{font-size:.95rem}.ecosystem-red .clean-node span{font-size:.76rem}.ecosystem-red .pos-ai{left:18px;top:95px}.ecosystem-red .pos-journey{right:18px;top:95px}.ecosystem-red .pos-crm{left:18px;top:305px}.ecosystem-red .pos-pricing{right:18px;top:305px}.ecosystem-red .pos-omni{left:18px;bottom:95px}.ecosystem-red .pos-exec{bottom:35px}.ecosystem-red .pos-db{right:18px;bottom:95px}}
+@media(max-width:760px){.ecosystem-red .emap-wide{min-height:1720px}.ecosystem-red .map-lines{display:none}.ecosystem-red .wide-core{top:52%}.ecosystem-red .clean-node{width:calc(100% - 32px);left:16px!important;right:16px!important;transform:none!important}.ecosystem-red .pos-ai{top:96px}.ecosystem-red .pos-journey{top:270px}.ecosystem-red .pos-crm{top:474px}.ecosystem-red .pos-pricing{top:678px}.ecosystem-red .pos-omni{top:882px;bottom:auto}.ecosystem-red .pos-db{top:1086px;bottom:auto}.ecosystem-red .pos-exec{top:1290px;bottom:auto;left:16px;transform:none!important}.ecosystem-red .wide-core{top:auto;bottom:120px;left:50%;transform:translateX(-50%);width:180px;height:180px}.ecosystem-red .ecocard{padding:20px}}
+
 
 </style>
 </head>
@@ -757,79 +759,72 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
     <div class="head">
       <div class="kicker">04 · FUTURE SALES ECOSYSTEM</div>
       <h2 data-de="Wie ich zukünftigen Vertrieb denke." data-en="How I think about future sales."></h2>
-      <p data-de="Für mich entsteht moderner Vertrieb aus dem Zusammenspiel von Kundendaten, digitalen Geschäftsmodellen, AI, Omnichannel-Logik und sauberer Umsetzung." data-en="For me, modern sales emerges from the interaction of customer data, digital business models, AI, omnichannel logic and disciplined execution."></p>
+      <p data-de="Für mich entsteht moderner Vertrieb aus dem Zusammenspiel von Kundendaten, digitalen Geschäftsmodellen, AI, Omnichannel-Logik und konsequenter Umsetzung." data-en="For me, modern sales emerges from the interaction of customer data, digital business models, AI, omnichannel logic and disciplined execution."></p>
     </div>
 
-    <div class="ecogrid clean-grid">
-      <div class="emap emap-clean">
+    <div class="ecogrid clean-grid fullwidth-layout">
+      <div class="emap emap-wide">
         <div class="emap-head"><span data-de="Vernetzte Logik" data-en="Connected logic"></span></div>
-        <svg class="map-lines" viewBox="0 0 1000 760" aria-hidden="true">
-          <circle cx="500" cy="380" r="150"></circle>
-          <line x1="500" y1="380" x2="230" y2="165"></line>
-          <line x1="500" y1="380" x2="500" y2="125"></line>
-          <line x1="500" y1="380" x2="770" y2="165"></line>
-          <line x1="500" y1="380" x2="175" y2="380"></line>
-          <line x1="500" y1="380" x2="825" y2="380"></line>
-          <line x1="500" y1="380" x2="230" y2="595"></line>
-          <line x1="500" y1="380" x2="500" y2="635"></line>
-          <line x1="500" y1="380" x2="770" y2="595"></line>
+        <svg class="map-lines" viewBox="0 0 1200 820" aria-hidden="true">
+          <circle cx="600" cy="400" r="160"></circle>
+          <line x1="600" y1="400" x2="290" y2="165"></line>
+          <line x1="600" y1="400" x2="910" y2="165"></line>
+          <line x1="600" y1="400" x2="205" y2="400"></line>
+          <line x1="600" y1="400" x2="995" y2="400"></line>
+          <line x1="600" y1="400" x2="285" y2="650"></line>
+          <line x1="600" y1="400" x2="600" y2="675"></line>
+          <line x1="600" y1="400" x2="915" y2="650"></line>
         </svg>
 
-        <div class="center core-center">
+        <div class="center wide-core">
           <small data-de="Leitidee" data-en="Guiding idea"></small>
           <strong>Customer-Centric<br>Growth</strong>
         </div>
 
-        <div class="node clean-node n1">
-          <strong>Lead &amp; Funnel</strong>
-          <span data-de="Bedarf erkennen und Nachfrage systematisch entwickeln." data-en="Identify demand and systematically build pipeline."></span>
-          <div class="microtags"><em>Acquisition</em><em>Demand Gen</em></div>
-        </div>
-
-        <div class="node clean-node n2">
-          <strong>Customer Journey</strong>
-          <span data-de="Touchpoints über den gesamten Kaufprozess verbessern." data-en="Improve touchpoints across the full purchase journey."></span>
-          <div class="microtags"><em>UX</em><em>Touchpoints</em></div>
-        </div>
-
-        <div class="node clean-node n3">
+        <div class="node clean-node pos-ai">
           <strong>AI &amp; Analytics</strong>
-          <span data-de="Muster, Signale und Forecasts für bessere Entscheidungen nutzen." data-en="Use patterns, signals and forecasts for better decisions."></span>
+          <span data-de="Muster, Signale und Forecasts nutzen, um Entscheidungen fundierter und schneller zu treffen." data-en="Use patterns, signals and forecasts to make decisions faster and more robust."></span>
           <div class="microtags"><em>Insights</em><em>Forecasting</em></div>
         </div>
 
-        <div class="node clean-node n4">
-          <strong>CRM &amp; Retention</strong>
-          <span data-de="Beziehungen vertiefen und Wiederkauf sowie Loyalität stärken." data-en="Deepen relationships and strengthen repeat business and loyalty."></span>
+        <div class="node clean-node pos-journey">
+          <strong>Customer Journey</strong>
+          <span data-de="Touchpoints entlang des gesamten Kaufprozesses verstehen und gezielt verbessern." data-en="Understand and improve touchpoints across the full purchase process."></span>
+          <div class="microtags"><em>Touchpoints</em><em>Experience</em></div>
+        </div>
+
+        <div class="node clean-node pos-crm">
+          <strong>Customer Relationship Management &amp; Retention</strong>
+          <span data-de="Beziehungen ausbauen, Wiederkauf stärken und Loyalität systematisch entwickeln." data-en="Strengthen relationships, repeat business and loyalty in a structured way."></span>
           <div class="microtags"><em>Loyalty</em><em>Retention</em></div>
         </div>
 
-        <div class="node clean-node n5">
+        <div class="node clean-node pos-pricing">
           <strong>Pricing &amp; Offer Logic</strong>
-          <span data-de="Wertversprechen sauber übersetzen und Angebotslogik schärfen." data-en="Translate value clearly and sharpen offer logic."></span>
+          <span data-de="Wertversprechen sauber übersetzen und Angebotslogiken kunden- sowie margenseitig schärfen." data-en="Translate value propositions clearly and sharpen offer logic from a customer and margin perspective."></span>
           <div class="microtags"><em>Pricing</em><em>Value</em></div>
         </div>
 
-        <div class="node clean-node n6">
+        <div class="node clean-node pos-omni">
           <strong>Omnichannel Sales</strong>
-          <span data-de="Digitale und physische Kanäle sinnvoll verzahnen." data-en="Connect digital and physical sales channels effectively."></span>
+          <span data-de="Digitale und physische Kanäle sinnvoll verzahnen und konsistent steuern." data-en="Connect and steer digital and physical channels consistently."></span>
           <div class="microtags"><em>Retail</em><em>Online</em></div>
         </div>
 
-        <div class="node clean-node n7">
+        <div class="node clean-node pos-exec">
           <strong>Execution Excellence</strong>
-          <span data-de="Strategien messbar in operative Ergebnisse übersetzen." data-en="Translate strategy into measurable operational outcomes."></span>
+          <span data-de="Strategien in klare Maßnahmen, KPIs und operative Ergebnisse übersetzen." data-en="Translate strategy into actions, KPIs and operational results."></span>
           <div class="microtags"><em>Steering</em><em>Roll-out</em></div>
         </div>
 
-        <div class="node clean-node n8">
+        <div class="node clean-node pos-db">
           <strong>Digital Business Models</strong>
-          <span data-de="Subscription, Services und CLV-orientierte Logiken aufbauen." data-en="Build subscription, service and CLV-oriented business logics."></span>
+          <span data-de="Subscription, Services und CLV-orientierte Logiken als Wachstumshebel aufbauen." data-en="Build subscription, services and CLV-oriented business logics as growth levers."></span>
           <div class="microtags"><em>Subscription</em><em>CLV</em></div>
         </div>
       </div>
 
-      <div class="ecocopy clean-copy">
+      <div class="ecocopy clean-copy-below">
         <div class="ecocard"><h3>01 · Customer Insight</h3><p data-de="Relevante Wachstumsentscheidungen beginnen mit einem klaren Verständnis von Kunden, Verhalten, Marktfeedback und Segmenten." data-en="Relevant growth decisions start with a clear understanding of customers, behaviour, market feedback and segments."></p></div>
         <div class="ecocard"><h3>02 · Commercial Translation</h3><p data-de="Aus Insights müssen konkrete Hebel werden – etwa Pricing, Angebotslogik, CRM-Maßnahmen oder neue Services." data-en="Insights must be translated into concrete levers – such as pricing, offer logic, CRM measures or new services."></p></div>
         <div class="ecocard"><h3>03 · Data-supported Decisions</h3><p data-de="AI und Analytics sind für mich kein Selbstzweck, sondern Werkzeuge, um Muster zu erkennen, Szenarien zu bewerten und Entscheidungen fundierter zu machen." data-en="For me, AI and analytics are not an end in themselves, but tools to identify patterns, assess scenarios and improve decision quality."></p></div>
