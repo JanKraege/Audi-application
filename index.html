@@ -18,24 +18,874 @@ section{padding:94px 0}.kicker{display:inline-flex;align-items:center;gap:8px;fo
 .ecogrid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}.emap{min-height:420px;border:1px solid var(--line);border-radius:22px;background:rgba(255,255,255,.02);position:relative;overflow:hidden}.center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:155px;height:155px;border:1px solid rgba(215,25,32,.48);border-radius:50%;display:grid;place-items:center;text-align:center;padding:16px;font-weight:900;background:radial-gradient(circle,rgba(215,25,32,.18),rgba(215,25,32,.025))}.node{position:absolute;min-width:125px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#15181e;text-align:center;font-size:.75rem;font-weight:850}.n1{left:7%;top:11%}.n2{right:7%;top:11%}.n3{left:5%;bottom:10%}.n4{right:5%;bottom:10%}.n5{left:50%;top:8%;transform:translateX(-50%)}.ecocopy{display:grid;gap:12px}.ecocard{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(255,255,255,.022)}.ecocard h3{font-size:.95rem;margin-bottom:4px}.ecocard p{font-size:.82rem;margin:0}
 .work{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.wcard{min-height:165px;border:1px solid var(--line);border-radius:17px;padding:20px;background:rgba(255,255,255,.025)}.icon{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(215,25,32,.14);color:#ff676c;font-weight:900}.wcard strong{display:block;margin:11px 0 4px}.wcard p{font-size:.81rem;margin:0}.leadgrid,.finalgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.lcard,.finalcard{border:1px solid var(--line);border-radius:19px;padding:23px;background:rgba(255,255,255,.023)}.lcard h3{margin-bottom:5px}.lcard p{margin:0;font-size:.87rem}.finalgrid{gap:34px;align-items:center}.finalcard{background:linear-gradient(145deg,rgba(215,25,32,.12),rgba(255,255,255,.02));box-shadow:var(--shadow)}.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.tag{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font-size:.74rem;font-weight:800;color:#d2d6dc}.contacts{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.contacts a{border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.76rem;font-weight:850}footer{padding:23px 0;border-top:1px solid rgba(255,255,255,.07);color:#747b85;font-size:.72rem}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:980px){.herogrid,.casegrid,.ecogrid,.finalgrid{grid-template-columns:1fr}.grid4{grid-template-columns:repeat(2,1fr)}.work{grid-template-columns:repeat(2,1fr)}.links{display:none}.housewrap{min-height:480px}}@media(max-width:640px){.container{width:calc(100% - 24px)}section{padding:70px 0}.grid4,.steps,.work,.leadgrid{grid-template-columns:1fr}.step.full{grid-column:auto}.journey{grid-template-columns:1fr;gap:5px}.metric{grid-template-columns:1fr;gap:4px}.take{grid-template-columns:1fr}.housewrap{min-height:420px}.room{padding:10px}.room b{font-size:.75rem}.room span{font-size:.62rem}.node{min-width:100px;font-size:.64rem;padding:9px}.center{width:130px;height:130px;font-size:.8rem}}
+
+/* ===== V2: INTERACTIVE CASE + AUTOMOTIVE MOTION ===== */
+:root{
+  --amber:#f1ae3f;
+  --danger:#ef5459;
+}
+
+/* subtle moving vehicle that follows page scroll */
+.scroll-vehicle-wrap{
+  position:fixed;
+  left:0;
+  bottom:18px;
+  width:190px;
+  height:74px;
+  z-index:8;
+  pointer-events:none;
+  opacity:0;
+  transform:translate3d(-220px,0,0);
+  transition:opacity .35s ease;
+  filter:drop-shadow(0 14px 15px rgba(0,0,0,.45));
+  will-change:transform;
+}
+.scroll-vehicle-wrap.visible{opacity:.42}
+.scroll-vehicle{
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+.scroll-vehicle .wheel{
+  transform-box:fill-box;
+  transform-origin:center;
+}
+.scroll-vehicle-wrap.visible .wheel{
+  animation:wheelSpin .75s linear infinite;
+}
+.scroll-light{
+  position:absolute;
+  left:-120px;
+  top:41px;
+  width:150px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,rgba(215,25,32,.6));
+  filter:blur(.4px);
+}
+@keyframes wheelSpin{to{transform:rotate(360deg)}}
+
+.motion-road{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:16px;
+  height:1px;
+  z-index:7;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 8%,rgba(255,255,255,.10) 50%,rgba(255,255,255,.06) 92%,transparent);
+  opacity:.5;
+}
+
+/* hero gets slight parallax */
+.hero-copy-motion,.housewrap{
+  will-change:transform;
+}
+
+/* simulator */
+.simulator{
+  margin-top:24px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.018));
+}
+.simulator-head{
+  padding:22px 24px 18px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  border-bottom:1px solid var(--line);
+}
+.simulator-head h4{
+  margin:0 0 5px;
+  font-size:1.08rem;
+}
+.simulator-head p{
+  margin:0;
+  max-width:690px;
+  font-size:.84rem;
+}
+.demo-pill{
+  flex:0 0 auto;
+  padding:7px 10px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:999px;
+  background:rgba(255,255,255,.04);
+  color:#cfd3d9;
+  font-size:.67rem;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.simulator-grid{
+  display:grid;
+  grid-template-columns:.82fr 1.18fr;
+  gap:0;
+}
+.controls{
+  padding:22px 24px;
+  border-right:1px solid var(--line);
+}
+.control{
+  padding:0 0 20px;
+  margin-bottom:20px;
+  border-bottom:1px solid var(--line-soft);
+}
+.control:last-child{
+  border-bottom:0;
+  padding-bottom:0;
+  margin-bottom:0;
+}
+.control-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:10px;
+}
+.control-label{
+  display:block;
+  font-size:.82rem;
+  font-weight:850;
+  color:#e4e7eb;
+}
+.control-help{
+  display:block;
+  color:#858d99;
+  font-size:.68rem;
+  margin-top:2px;
+}
+.control-value{
+  min-width:70px;
+  text-align:right;
+  color:#fff;
+  font-size:.84rem;
+  font-weight:900;
+}
+input[type="range"].sim-range{
+  width:100%;
+  height:5px;
+  border-radius:999px;
+  appearance:none;
+  -webkit-appearance:none;
+  background:linear-gradient(90deg,var(--red) 0%,var(--red) var(--range-pct,50%),rgba(255,255,255,.11) var(--range-pct,50%),rgba(255,255,255,.11) 100%);
+  outline:none;
+}
+input[type="range"].sim-range::-webkit-slider-thumb{
+  appearance:none;
+  -webkit-appearance:none;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#fff;
+  border:4px solid var(--red);
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.28);
+}
+input[type="range"].sim-range::-moz-range-thumb{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#fff;
+  border:4px solid var(--red);
+  cursor:pointer;
+}
+.sim-output{
+  padding:22px 24px;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:10px;
+  margin-bottom:18px;
+}
+.kpi-box{
+  min-height:92px;
+  padding:13px;
+  border:1px solid var(--line-soft);
+  border-radius:14px;
+  background:rgba(255,255,255,.025);
+}
+.kpi-box span{
+  display:block;
+  color:#858d98;
+  font-size:.67rem;
+  font-weight:750;
+  margin-bottom:7px;
+}
+.kpi-box strong{
+  display:block;
+  font-size:1.16rem;
+  letter-spacing:-.02em;
+}
+.reco-card{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:start;
+  gap:15px;
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.025);
+  margin-bottom:18px;
+}
+.reco-state{
+  min-width:82px;
+  text-align:center;
+  padding:9px 11px;
+  border-radius:10px;
+  font-size:.78rem;
+  font-weight:950;
+  letter-spacing:.05em;
+}
+.reco-state.go{background:rgba(68,197,140,.16);color:#71dbaa;border:1px solid rgba(68,197,140,.32)}
+.reco-state.adapt{background:rgba(241,174,63,.14);color:#f3be66;border:1px solid rgba(241,174,63,.31)}
+.reco-state.nogo{background:rgba(239,84,89,.14);color:#ff7479;border:1px solid rgba(239,84,89,.31)}
+.reco-copy h4{
+  margin:0 0 3px;
+  font-size:.94rem;
+}
+.reco-copy p{
+  margin:0;
+  font-size:.79rem;
+}
+.chart-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.chart-card{
+  position:relative;
+  min-height:250px;
+  border:1px solid var(--line-soft);
+  border-radius:15px;
+  padding:14px;
+  background:rgba(255,255,255,.02);
+}
+.chart-card h5{
+  margin:0 0 8px;
+  font-size:.76rem;
+  letter-spacing:.01em;
+  color:#dce0e5;
+}
+.chart-card canvas{
+  display:block;
+  width:100%;
+  height:205px;
+}
+.chart-note{
+  margin-top:8px;
+  color:#747c88;
+  font-size:.65rem;
+}
+.disclaimer{
+  margin-top:13px;
+  padding:10px 12px;
+  border-left:2px solid rgba(255,255,255,.22);
+  color:#828a96;
+  font-size:.68rem;
+  background:rgba(255,255,255,.018);
+}
+
+/* recommendation threshold strip */
+.thresholds{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:6px;
+  margin-top:12px;
+}
+.threshold{
+  padding:8px 9px;
+  border-radius:9px;
+  font-size:.65rem;
+  border:1px solid var(--line-soft);
+  color:#9ca3ad;
+}
+.threshold b{display:block;color:#d9dde2;font-size:.67rem}
+
+/* background vehicle motifs */
+.vehicle-ghost{
+  position:absolute;
+  width:420px;
+  max-width:42vw;
+  opacity:.05;
+  pointer-events:none;
+  z-index:0;
+}
+.vehicle-ghost svg{width:100%;display:block}
+.vehicle-ghost.one{right:-100px;top:16%}
+.vehicle-ghost.two{left:-120px;bottom:10%;transform:scaleX(-1)}
+section{position:relative;overflow:hidden}
+section>.container{position:relative;z-index:2}
+
+@media(max-width:980px){
+  .simulator-grid{grid-template-columns:1fr}
+  .controls{border-right:0;border-bottom:1px solid var(--line)}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .scroll-vehicle-wrap{width:150px}
+}
+@media(max-width:680px){
+  .simulator-head{display:block}
+  .demo-pill{display:inline-block;margin-top:12px}
+  .chart-grid{grid-template-columns:1fr}
+  .kpi-grid{grid-template-columns:1fr 1fr}
+  .reco-card{grid-template-columns:1fr}
+  .scroll-vehicle-wrap{display:none}
+  .motion-road{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .scroll-vehicle-wrap,.hero-copy-motion,.housewrap{transform:none!important}
+  .scroll-vehicle-wrap .wheel{animation:none!important}
+}
+
 </style>
 </head>
 <body>
 <nav><div class="container nav"><a class="brand" href="#top"><span class="brandmark"></span><span>Jan Kraege · Graduate Application</span></a><div class="navright"><div class="links"><a href="#showroom" data-de="Showroom" data-en="Showroom"></a><a href="#journey" data-de="Mein Weg" data-en="My Journey"></a><a href="#case" data-de="Business Case" data-en="Business Case"></a><a href="#ecosystem" data-de="Future Sales" data-en="Future Sales"></a></div><div class="lang"><button id="deBtn" class="active">DE</button><button id="enBtn">EN</button></div></div></div></nav>
+
+<div class="motion-road" aria-hidden="true"></div>
+<div class="scroll-vehicle-wrap" id="scrollVehicle" aria-hidden="true">
+  <div class="scroll-light"></div>
+  <svg class="scroll-vehicle" viewBox="0 0 360 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M28 83C53 82 72 77 93 63C121 44 144 30 178 27C218 23 255 31 285 51C299 60 311 70 325 80C333 85 342 88 350 89"
+          stroke="rgba(255,255,255,.88)" stroke-width="3.2" stroke-linecap="round"/>
+    <path d="M89 64C132 60 177 59 217 61C258 62 291 69 316 82"
+          stroke="rgba(255,255,255,.36)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M144 41C166 35 191 33 215 35C239 36 260 42 279 52"
+          stroke="rgba(215,25,32,.94)" stroke-width="2.7" stroke-linecap="round"/>
+    <path d="M33 92H348" stroke="rgba(255,255,255,.16)" stroke-width="1.5"/>
+    <g class="wheel"><circle cx="112" cy="88" r="20" stroke="rgba(255,255,255,.8)" stroke-width="3"/><path d="M112 71V105M95 88H129M100 76L124 100M124 76L100 100" stroke="rgba(255,255,255,.28)" stroke-width="1.3"/></g>
+    <g class="wheel"><circle cx="285" cy="88" r="20" stroke="rgba(255,255,255,.8)" stroke-width="3"/><path d="M285 71V105M268 88H302M273 76L297 100M297 76L273 100" stroke="rgba(255,255,255,.28)" stroke-width="1.3"/></g>
+  </svg>
+</div>
+
 <main id="top">
 <section class="hero"><div class="container herogrid"><div><div class="eyebrow">Audi Global Graduate Program · Sales & Marketing Strategy</div><h1>Strategy.<br>Customer.<br><span class="accent">Future Sales.</span></h1><p class="lead" data-de="Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen." data-en="I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem."></p><div class="actions"><a class="btn primary" href="#showroom" data-de="Showroom betreten" data-en="Enter the showroom"></a><a class="btn" href="#case" data-de="Business Case ansehen" data-en="View business case"></a></div></div><div class="housewrap"><div class="house"><div class="roof"></div><div class="shell"><div class="room r1"><small>ROOM 01</small><b>Strategy Garage</b><span>Growth · Business Models · Transformation</span></div><div class="room r2"><small>ROOM 02</small><b>Customer Data Lab</b><span>CRM · Sales Data · Market Insights</span></div><div class="room r3"><small>ROOM 03</small><b>Digital Sales Studio</b><span>AI · Omnichannel · Subscription</span></div><div class="room r4"><small>ROOM 04</small><b>Leadership Lounge</b><span>Ownership · Teamwork · International</span></div><div class="floor"></div><div class="car"><svg viewBox="0 0 700 230" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M92 151C128 150 154 144 184 123C226 94 253 66 308 59C367 52 438 57 495 81C529 95 557 118 584 140C606 158 634 166 659 169" stroke="rgba(255,255,255,.88)" stroke-width="4" stroke-linecap="round"/><path d="M178 123C230 118 287 115 359 115C433 115 495 121 550 139" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round"/><path d="M248 90C282 79 320 74 360 73C405 72 446 77 484 91" stroke="rgba(215,25,32,.9)" stroke-width="3" stroke-linecap="round"/><circle cx="213" cy="166" r="33" stroke="rgba(255,255,255,.82)" stroke-width="4"/><circle cx="546" cy="166" r="33" stroke="rgba(255,255,255,.82)" stroke-width="4"/><path d="M87 169H660" stroke="rgba(255,255,255,.18)" stroke-width="2"/></svg></div></div><div class="caption" data-de="Konzept: persönliche Bewerbungswebsite · kein offizieller Audi-Auftritt" data-en="Concept: personal application website · not an official Audi website"></div></div></div></div></section>
 <section id="showroom" class="panel"><div class="container"><div class="head"><div class="kicker">01 · THE APPLICATION HOUSE</div><h2 data-de="Vier Räume. Ein Profil." data-en="Four rooms. One profile."></h2><p data-de="Die Website ist wie ein modernes Sales- und Strategiehaus aufgebaut: Jeder Raum steht für einen Teil meines Profils, der zum Zielbereich Sales & Marketing Strategy passt." data-en="The website is structured like a modern sales and strategy house: each room represents a part of my profile relevant to the Sales & Marketing Strategy target field."></p></div><div class="grid4"><article class="card"><div class="idx">ROOM 01</div><h3>Strategy Garage</h3><p data-de="Strategische Fragestellungen strukturieren, Wachstumschancen bewerten und daraus klare Managementempfehlungen entwickeln." data-en="Structure strategic questions, evaluate growth opportunities and translate them into clear management recommendations."></p></article><article class="card"><div class="idx">ROOM 02</div><h3>Customer Data Lab</h3><p data-de="Kunden-, Sales-, Kampagnen- und Marktdaten analysieren, Muster erkennen und datenbasierte Entscheidungen vorbereiten." data-en="Analyse customer, sales, campaign and market data, identify patterns and support data-driven decision-making."></p></article><article class="card"><div class="idx">ROOM 03</div><h3>Digital Sales Studio</h3><p data-de="Digitale Geschäftsmodelle, CRM, AI und neue Customer Journeys als Hebel für Wachstum und zukünftige Vertriebssysteme verstehen." data-en="Understand digital business models, CRM, AI and new customer journeys as levers for growth and future sales ecosystems."></p></article><article class="card"><div class="idx">ROOM 04</div><h3>Leadership Lounge</h3><p data-de="Ownership, klare Kommunikation und Zusammenarbeit in internationalen Teams – ergänzt durch Führungserfahrung als Jugendtrainer." data-en="Ownership, clear communication and collaboration in international teams – complemented by leadership experience as a youth coach."></p></article></div></div></section>
 <section id="journey"><div class="container"><div class="head"><div class="kicker">02 · MY ROAD</div><h2 data-de="Mein Weg Richtung Sales & Marketing Strategy." data-en="My road toward Sales & Marketing Strategy."></h2><p data-de="Internationales Studium, kommerzielle Projekte und datenbasierte Marketing-Erfahrung bilden gemeinsam die Grundlage für meinen nächsten Schritt." data-en="International studies, commercial projects and data-driven marketing experience together form the basis for my next step."></p></div><div class="road"><div class="journey"><div class="date">2020 – 2024</div><div class="jcard"><h3>Bachelor of Business Administration</h3><div class="place">Hochschule Fresenius · Wiesbaden</div><p data-de="Marketing, International Management und Organisationspsychologie; Auslandssemester an der University of Technology Sydney." data-en="Marketing, International Management and Organisational Psychology; semester abroad at the University of Technology Sydney."></p></div></div><div class="journey"><div class="date">2022 – 2023</div><div class="jcard"><h3>BRITA Australia · Sales & Marketing Assistant</h3><div class="place">Sydney, Australia</div><p data-de="Entwicklung und Bewertung eines Subscription-Modells, Analyse von Sales- und Kundendaten sowie Ableitung einer strukturierten Go/No-Go-Empfehlung." data-en="Developed and assessed a subscription model, analysed sales and customer data and derived a structured go/no-go recommendation."></p></div></div><div class="journey"><div class="date">2025 – 2026</div><div class="jcard"><h3>Master of Management</h3><div class="place">University of Technology Sydney · Australia</div><p>Global Strategic Management · Creative Problem Solving · Managing Change · Managing in a Multicultural World</p></div></div><div class="journey"><div class="date">2026</div><div class="jcard"><h3>Tokyo Headspa · Marketing Intern</h3><div class="place">Sydney, Australia</div><p data-de="Markt- und Wettbewerbsanalysen, CRM- und Kampagnendaten, Wachstumschancen, Serviceportfolio sowie generative KI für Recherche und Ideation." data-en="Market and competitor analysis, CRM and campaign data, growth opportunities, service portfolio development and generative AI for research and ideation."></p></div></div></div></div></section>
-<section id="case" class="panel"><div class="container"><div class="head"><div class="kicker">03 · SELECTED BUSINESS MODEL CASE</div><h2 data-de="Von Kundendaten zu einem digitalen Geschäftsmodell." data-en="From customer data to a digital business model."></h2><p data-de="Mein BRITA-Projekt zeigt, wie ich eine konkrete KPI in eine strategische Business-Frage übersetze und daraus eine umsetzbare Empfehlung entwickle." data-en="My BRITA project shows how I translate a specific KPI into a strategic business question and develop an actionable recommendation."></p></div><div class="case"><div class="casehead"><div class="kicker">BRITA AUSTRALIA · SUBSCRIPTION MODEL ASSESSMENT</div><h3 data-de="Wie kann die Filter Exchange Rate verbessert werden?" data-en="How can the Filter Exchange Rate be improved?"></h3><p data-de="Aus einer konkreten KPI entstand die Idee, ein Subscription-Modell als potenziellen Wachstums- und Retention-Hebel zu untersuchen." data-en="A specific KPI led to the idea of assessing a subscription model as a potential growth and retention lever."></p></div><div class="casebody"><div class="casegrid"><div class="casepanel"><h4 data-de="Projektfokus" data-en="Project focus"></h4><div class="metrics"><div class="metric"><span>KPI</span><strong>Filter Exchange Rate</strong></div><div class="metric"><span data-de="Datenbasis" data-en="Data basis"></span><strong data-de="Sales-, Kunden- und Marktdaten" data-en="Sales, customer and market data"></strong></div><div class="metric"><span data-de="Kernfrage" data-en="Core question"></span><strong data-de="Ist ein Subscription-Modell wirtschaftlich sinnvoll?" data-en="Is a subscription model commercially viable?"></strong></div><div class="metric"><span>Output</span><strong data-de="Strukturierte Go/No-Go-Empfehlung" data-en="Structured go/no-go recommendation"></strong></div></div></div><div class="casepanel"><h4 data-de="Mein analytischer Ansatz" data-en="My analytical approach"></h4><div class="steps"><div class="step"><div class="num">1</div><strong data-de="Problem definieren" data-en="Define the problem"></strong><span data-de="KPI verstehen und relevante Business-Frage ableiten." data-en="Understand the KPI and derive the relevant business question."></span></div><div class="step"><div class="num">2</div><strong data-de="Kunden & Daten analysieren" data-en="Analyse customers & data"></strong><span data-de="Sales-Daten, Kundensegmente und Kaufverhalten untersuchen." data-en="Analyse sales data, customer segments and purchasing behaviour."></span></div><div class="step"><div class="num">3</div><strong data-de="Markt bewerten" data-en="Assess the market"></strong><span data-de="Marktpotenzial, Wettbewerb und Kundennutzen prüfen." data-en="Assess market potential, competition and customer value."></span></div><div class="step"><div class="num">4</div><strong data-de="Economics prüfen" data-en="Test the economics"></strong><span data-de="Chancen, Risiken und Umsetzungsbarrieren bewerten." data-en="Evaluate opportunities, risks and implementation barriers."></span></div><div class="step full"><div class="num">5</div><strong data-de="Empfehlung ableiten" data-en="Form the recommendation"></strong><span data-de="Ergebnisse priorisieren, managementgerecht aufbereiten und eine klare Go/No-Go-Empfehlung formulieren." data-en="Prioritise findings, structure them for management and formulate a clear go/no-go recommendation."></span></div></div><div class="take"><div class="badge">GO / NO-GO</div><div><h4 data-de="Was ich daraus mitgenommen habe" data-en="What I learned"></h4><p data-de="Daten schaffen erst dann Wert, wenn sie mit Kundenverständnis, kommerzieller Logik und einer klaren Entscheidung verbunden werden." data-en="Data creates value when it is connected to customer understanding, commercial logic and a clear decision."></p></div></div></div></div></div></div></div></section>
-<section id="ecosystem"><div class="container"><div class="head"><div class="kicker">04 · FUTURE SALES ECOSYSTEM</div><h2 data-de="Wie ich zukünftigen Vertrieb denke." data-en="How I think about future sales."></h2><p data-de="Für mich entsteht moderner Vertrieb aus dem Zusammenspiel von Customer Data, digitalen Geschäftsmodellen, Omnichannel-Logik, AI und konsequenter Umsetzung." data-en="For me, modern sales emerges from the interaction of customer data, digital business models, omnichannel logic, AI and disciplined execution."></p></div><div class="ecogrid"><div class="emap"><div class="center">Customer-Centric<br>Growth</div><div class="node n1">Lead & Funnel Management</div><div class="node n2">AI & Analytics</div><div class="node n3">Omnichannel Sales</div><div class="node n4">Digital Business Models</div><div class="node n5">Customer Journey</div></div><div class="ecocopy"><div class="ecocard"><h3>01 · Customer Insight</h3><p data-de="Kundendaten, Kaufverhalten und Marktfeedback bilden die Grundlage für relevante Wachstumsentscheidungen." data-en="Customer data, purchasing behaviour and market feedback form the basis for relevant growth decisions."></p></div><div class="ecocard"><h3>02 · Digital Business Models</h3><p data-de="Subscription, digitale Services und neue Nutzungsmodelle können Customer Lifetime Value und Bindung erweitern." data-en="Subscription, digital services and new usage models can expand customer lifetime value and retention."></p></div><div class="ecocard"><h3>03 · AI & Decision Support</h3><p data-de="AI kann Recherche, Ideation und Analyse unterstützen – entscheidend bleibt die Qualität der Business-Frage." data-en="AI can support research, ideation and analysis – the quality of the business question remains decisive."></p></div><div class="ecocard"><h3>04 · Omnichannel Execution</h3><p data-de="Customer Experience entsteht durch konsistente Übergänge zwischen digitalen und physischen Touchpoints." data-en="Customer experience is created through consistent transitions between digital and physical touchpoints."></p></div></div></div></div></section>
+
+<section id="case" class="panel">
+  <div class="vehicle-ghost one" aria-hidden="true">
+    <svg viewBox="0 0 700 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M92 151C128 150 154 144 184 123C226 94 253 66 308 59C367 52 438 57 495 81C529 95 557 118 584 140C606 158 634 166 659 169" stroke="white" stroke-width="4" stroke-linecap="round"/>
+      <path d="M178 123C230 118 287 115 359 115C433 115 495 121 550 139" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="213" cy="166" r="33" stroke="white" stroke-width="4"/>
+      <circle cx="546" cy="166" r="33" stroke="white" stroke-width="4"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="head">
+      <div class="kicker">03 · SELECTED BUSINESS MODEL CASE</div>
+      <h2 data-de="Von Kundendaten zu einer dynamischen Business-Entscheidung."
+          data-en="From customer data to a dynamic business decision."></h2>
+      <p data-de="Der Simulator zeigt, wie unterschiedliche Annahmen zu Adoption, KPI-Uplift, Marge und Umsetzungsaufwand die Empfehlung verändern können."
+         data-en="The simulator shows how different assumptions around adoption, KPI uplift, margin and implementation complexity can change the recommendation."></p>
+    </div>
+
+    <div class="case">
+      <div class="casehead">
+        <div class="kicker">BRITA AUSTRALIA · SUBSCRIPTION MODEL ASSESSMENT</div>
+        <h3 data-de="Wie kann die Filter Exchange Rate verbessert werden?"
+            data-en="How can the Filter Exchange Rate be improved?"></h3>
+        <p data-de="Aus einer konkreten KPI entstand die Idee, ein Subscription-Modell als potenziellen Wachstums- und Retention-Hebel zu untersuchen."
+           data-en="A specific KPI led to the idea of assessing a subscription model as a potential growth and retention lever."></p>
+      </div>
+
+      <div class="casebody">
+        <div class="casegrid">
+          <div class="casepanel">
+            <h4 data-de="Projektfokus" data-en="Project focus"></h4>
+            <div class="metrics">
+              <div class="metric"><span>KPI</span><strong>Filter Exchange Rate</strong></div>
+              <div class="metric"><span data-de="Datenbasis" data-en="Data basis"></span><strong data-de="Sales-, Kunden- und Marktdaten" data-en="Sales, customer and market data"></strong></div>
+              <div class="metric"><span data-de="Kernfrage" data-en="Core question"></span><strong data-de="Ist ein Subscription-Modell wirtschaftlich sinnvoll?" data-en="Is a subscription model commercially viable?"></strong></div>
+              <div class="metric"><span>Output</span><strong>GO · ADAPT · NO-GO</strong></div>
+            </div>
+          </div>
+
+          <div class="casepanel">
+            <h4 data-de="Mein analytischer Ansatz" data-en="My analytical approach"></h4>
+            <div class="steps">
+              <div class="step"><div class="num">1</div><strong data-de="Problem definieren" data-en="Define the problem"></strong><span data-de="KPI verstehen und relevante Business-Frage ableiten." data-en="Understand the KPI and derive the relevant business question."></span></div>
+              <div class="step"><div class="num">2</div><strong data-de="Kunden & Daten analysieren" data-en="Analyse customers & data"></strong><span data-de="Sales-Daten, Kundensegmente und Kaufverhalten untersuchen." data-en="Analyse sales data, customer segments and purchasing behaviour."></span></div>
+              <div class="step"><div class="num">3</div><strong data-de="Markt bewerten" data-en="Assess the market"></strong><span data-de="Marktpotenzial, Wettbewerb und Kundennutzen prüfen." data-en="Assess market potential, competition and customer value."></span></div>
+              <div class="step"><div class="num">4</div><strong data-de="Economics prüfen" data-en="Test the economics"></strong><span data-de="Chancen, Risiken und Umsetzungsbarrieren bewerten." data-en="Evaluate opportunities, risks and implementation barriers."></span></div>
+              <div class="step full"><div class="num">5</div><strong data-de="Empfehlung ableiten" data-en="Form the recommendation"></strong><span data-de="Ergebnisse priorisieren und eine klare GO-, ADAPT- oder NO-GO-Empfehlung formulieren." data-en="Prioritise findings and formulate a clear GO, ADAPT or NO-GO recommendation."></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="simulator" id="businessSimulator">
+          <div class="simulator-head">
+            <div>
+              <h4 data-de="Interactive Commercial Scenario Lab"
+                  data-en="Interactive Commercial Scenario Lab"></h4>
+              <p data-de="Verändere die Annahmen. Die Empfehlung, Kennzahlen und Diagramme reagieren in Echtzeit."
+                 data-en="Change the assumptions. The recommendation, metrics and charts update in real time."></p>
+            </div>
+            <div class="demo-pill" data-de="Illustratives Szenario" data-en="Illustrative scenario"></div>
+          </div>
+
+          <div class="simulator-grid">
+            <div class="controls">
+              <div class="control">
+                <div class="control-top">
+                  <div>
+                    <span class="control-label" data-de="Adressierbare Kundenbasis" data-en="Addressable customer base"></span>
+                    <span class="control-help" data-de="Illustrative Anzahl potenziell geeigneter Kunden" data-en="Illustrative number of potentially eligible customers"></span>
+                  </div>
+                  <div class="control-value" id="customerValue">120,000</div>
+                </div>
+                <input class="sim-range" id="customers" type="range" min="50000" max="250000" step="5000" value="120000">
+              </div>
+
+              <div class="control">
+                <div class="control-top">
+                  <div>
+                    <span class="control-label" data-de="Erwartete Subscription-Adoption" data-en="Expected subscription adoption"></span>
+                    <span class="control-help" data-de="Anteil der adressierbaren Kunden" data-en="Share of addressable customers"></span>
+                  </div>
+                  <div class="control-value" id="adoptionValue">22%</div>
+                </div>
+                <input class="sim-range" id="adoption" type="range" min="5" max="45" step="1" value="22">
+              </div>
+
+              <div class="control">
+                <div class="control-top">
+                  <div>
+                    <span class="control-label" data-de="Erwarteter KPI-Uplift" data-en="Expected KPI uplift"></span>
+                    <span class="control-help" data-de="Verbesserung der Filter Exchange Rate in Prozentpunkten" data-en="Improvement in Filter Exchange Rate in percentage points"></span>
+                  </div>
+                  <div class="control-value" id="upliftValue">18 pp</div>
+                </div>
+                <input class="sim-range" id="uplift" type="range" min="5" max="35" step="1" value="18">
+              </div>
+
+              <div class="control">
+                <div class="control-top">
+                  <div>
+                    <span class="control-label" data-de="Contribution Margin" data-en="Contribution margin"></span>
+                    <span class="control-help" data-de="Illustrative Marge des Modells" data-en="Illustrative margin of the model"></span>
+                  </div>
+                  <div class="control-value" id="marginValue">38%</div>
+                </div>
+                <input class="sim-range" id="margin" type="range" min="20" max="55" step="1" value="38">
+              </div>
+
+              <div class="control">
+                <div class="control-top">
+                  <div>
+                    <span class="control-label" data-de="Umsetzungskomplexität" data-en="Implementation complexity"></span>
+                    <span class="control-help" data-de="10 = sehr einfach · 90 = sehr komplex" data-en="10 = very simple · 90 = very complex"></span>
+                  </div>
+                  <div class="control-value" id="complexityValue">42 / 100</div>
+                </div>
+                <input class="sim-range" id="complexity" type="range" min="10" max="90" step="1" value="42">
+              </div>
+            </div>
+
+            <div class="sim-output">
+              <div class="kpi-grid">
+                <div class="kpi-box">
+                  <span data-de="Potenzielle Subscriber" data-en="Potential subscribers"></span>
+                  <strong id="subscriberMetric">26,400</strong>
+                </div>
+                <div class="kpi-box">
+                  <span data-de="Commercial Score" data-en="Commercial score"></span>
+                  <strong id="scoreMetric">—</strong>
+                </div>
+                <div class="kpi-box">
+                  <span data-de="Execution Readiness" data-en="Execution readiness"></span>
+                  <strong id="readinessMetric">—</strong>
+                </div>
+                <div class="kpi-box">
+                  <span data-de="KPI-Uplift" data-en="KPI uplift"></span>
+                  <strong id="upliftMetric">+18 pp</strong>
+                </div>
+              </div>
+
+              <div class="reco-card">
+                <div class="reco-state adapt" id="recoState">ADAPT</div>
+                <div class="reco-copy">
+                  <h4 id="recoTitle">—</h4>
+                  <p id="recoText">—</p>
+                </div>
+              </div>
+
+              <div class="chart-grid">
+                <div class="chart-card">
+                  <h5 data-de="Treiber des Commercial Scores" data-en="Commercial score drivers"></h5>
+                  <canvas id="driverChart"></canvas>
+                  <div class="chart-note" data-de="0–100 Index · höhere Werte sind attraktiver" data-en="0–100 index · higher is more attractive"></div>
+                </div>
+
+                <div class="chart-card">
+                  <h5 data-de="Adoption-Sensitivität" data-en="Adoption sensitivity"></h5>
+                  <canvas id="sensitivityChart"></canvas>
+                  <div class="chart-note" data-de="Wie sich der Gesamt-Score bei anderer Adoption verändert" data-en="How the overall score changes at different adoption rates"></div>
+                </div>
+              </div>
+
+              <div class="thresholds">
+                <div class="threshold"><b>NO-GO</b><span data-de="< 48 Score" data-en="< 48 score"></span></div>
+                <div class="threshold"><b>ADAPT</b><span data-de="48–69 Score" data-en="48–69 score"></span></div>
+                <div class="threshold"><b>GO</b><span data-de="≥ 70 Score" data-en="≥ 70 score"></span></div>
+              </div>
+
+              <div class="disclaimer"
+                   data-de="Wichtig: Alle Werte in diesem Simulator sind bewusst illustrative Beispielannahmen und keine historischen oder vertraulichen BRITA-Daten. Der Simulator demonstriert ausschließlich meine Entscheidungslogik."
+                   data-en="Important: All figures in this simulator are deliberately illustrative assumptions and are not historical or confidential BRITA data. The simulator only demonstrates my decision-making logic."></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ecosystem">
+<div class="vehicle-ghost two" aria-hidden="true">
+  <svg viewBox="0 0 700 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M92 151C128 150 154 144 184 123C226 94 253 66 308 59C367 52 438 57 495 81C529 95 557 118 584 140C606 158 634 166 659 169" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <path d="M248 90C282 79 320 74 360 73C405 72 446 77 484 91" stroke="rgba(215,25,32,.95)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="213" cy="166" r="33" stroke="white" stroke-width="4"/>
+    <circle cx="546" cy="166" r="33" stroke="white" stroke-width="4"/>
+  </svg>
+</div>
+<div class="container"><div class="head"><div class="kicker">04 · FUTURE SALES ECOSYSTEM</div><h2 data-de="Wie ich zukünftigen Vertrieb denke." data-en="How I think about future sales."></h2><p data-de="Für mich entsteht moderner Vertrieb aus dem Zusammenspiel von Customer Data, digitalen Geschäftsmodellen, Omnichannel-Logik, AI und konsequenter Umsetzung." data-en="For me, modern sales emerges from the interaction of customer data, digital business models, omnichannel logic, AI and disciplined execution."></p></div><div class="ecogrid"><div class="emap"><div class="center">Customer-Centric<br>Growth</div><div class="node n1">Lead & Funnel Management</div><div class="node n2">AI & Analytics</div><div class="node n3">Omnichannel Sales</div><div class="node n4">Digital Business Models</div><div class="node n5">Customer Journey</div></div><div class="ecocopy"><div class="ecocard"><h3>01 · Customer Insight</h3><p data-de="Kundendaten, Kaufverhalten und Marktfeedback bilden die Grundlage für relevante Wachstumsentscheidungen." data-en="Customer data, purchasing behaviour and market feedback form the basis for relevant growth decisions."></p></div><div class="ecocard"><h3>02 · Digital Business Models</h3><p data-de="Subscription, digitale Services und neue Nutzungsmodelle können Customer Lifetime Value und Bindung erweitern." data-en="Subscription, digital services and new usage models can expand customer lifetime value and retention."></p></div><div class="ecocard"><h3>03 · AI & Decision Support</h3><p data-de="AI kann Recherche, Ideation und Analyse unterstützen – entscheidend bleibt die Qualität der Business-Frage." data-en="AI can support research, ideation and analysis – the quality of the business question remains decisive."></p></div><div class="ecocard"><h3>04 · Omnichannel Execution</h3><p data-de="Customer Experience entsteht durch konsistente Übergänge zwischen digitalen und physischen Touchpoints." data-en="Customer experience is created through consistent transitions between digital and physical touchpoints."></p></div></div></div></div></section>
 <section class="panel"><div class="container"><div class="head"><div class="kicker">05 · HOW I WORK</div><h2 data-de="Analytisch denken. Unternehmerisch handeln." data-en="Think analytically. Act entrepreneurially."></h2><p data-de="Meine Arbeitsweise verbindet strukturierte Analyse mit Ownership, klarer Kommunikation und einem ausgeprägten Interesse an Kunden und Geschäftsmodellen." data-en="My working style combines structured analysis with ownership, clear communication and a strong interest in customers and business models."></p></div><div class="work"><div class="wcard"><div class="icon">A</div><strong>Analytical Thinking</strong><p data-de="Komplexe Fragestellungen strukturieren und zentrale Treiber identifizieren." data-en="Structure complex questions and identify the key drivers."></p></div><div class="wcard"><div class="icon">C</div><strong>Customer Centricity</strong><p data-de="Kundenbedürfnisse mit wirtschaftlichen Zielen verbinden." data-en="Connect customer needs with commercial objectives."></p></div><div class="wcard"><div class="icon">O</div><strong>Ownership</strong><p data-de="Aufgaben selbstständig vorantreiben und Verantwortung für Ergebnisse übernehmen." data-en="Move work forward independently and take responsibility for outcomes."></p></div><div class="wcard"><div class="icon">I</div><strong>International Collaboration</strong><p data-de="Erfahrung in Deutschland und Australien sowie cross-funktionale Zusammenarbeit." data-en="Experience in Germany and Australia and cross-functional collaboration."></p></div><div class="wcard"><div class="icon">B</div><strong>Business Model Thinking</strong><p data-de="Kunde, Value Proposition, Economics und Umsetzung gemeinsam betrachten." data-en="Consider customer, value proposition, economics and execution together."></p></div><div class="wcard"><div class="icon">L</div><strong>Learning Agility</strong><p data-de="Neue Themen schnell verstehen und Wissen praktisch anwenden." data-en="Understand new topics quickly and apply knowledge in practice."></p></div></div></div></section>
 <section><div class="container"><div class="head"><div class="kicker">06 · LEADERSHIP & INTERNATIONAL EXPERIENCE</div><h2 data-de="Verantwortung beginnt nicht erst mit einem Jobtitel." data-en="Responsibility does not begin with a job title."></h2></div><div class="leadgrid"><div class="lcard"><h3 data-de="Jugendtrainer Hockey · RRK Rüsselsheim" data-en="Youth Hockey Coach · RRK Rüsselsheim"></h3><p data-de="Von 2021 bis 2024 habe ich Jugendmannschaften betreut und dabei klare Kommunikation, Motivation, Verlässlichkeit und Teamführung praktisch erlebt." data-en="From 2021 to 2024, I coached youth teams and experienced clear communication, motivation, reliability and team leadership in practice."></p></div><div class="lcard"><h3 data-de="International · Deutschland & Australien" data-en="International · Germany & Australia"></h3><p data-de="Studium, Auslandssemester und Berufserfahrung in Australien haben meine Anpassungsfähigkeit und mein Verständnis unterschiedlicher Perspektiven gestärkt." data-en="Studies, a semester abroad and work experience in Australia strengthened my adaptability and understanding of different perspectives."></p></div></div></div></section>
 <section class="panel"><div class="container finalgrid"><div><div class="kicker">07 · WHY THIS NEXT STEP</div><h2 data-de="Warum Sales & Marketing Strategy?" data-en="Why Sales & Marketing Strategy?"></h2><p data-de="Ich möchte meine Erfahrungen in kommerzieller Analyse, digitalen Geschäftsmodellen und internationaler Zusammenarbeit in einem Umfeld weiterentwickeln, das die Zukunft des Vertriebs aktiv gestaltet." data-en="I want to develop my experience in commercial analysis, digital business models and international collaboration in an environment that actively shapes the future of sales."></p><div class="tags"><span class="tag">Sales Strategy</span><span class="tag">Marketing Strategy</span><span class="tag">Digital Business Models</span><span class="tag">CRM & Customer Data</span><span class="tag">AI & Analytics</span><span class="tag">Omnichannel</span><span class="tag">Growth</span><span class="tag">International Collaboration</span></div></div><div class="finalcard"><h3>Jan Kraege · Master of Management</h3><p data-de="International erfahren, analytisch, kundenorientiert und motiviert, an zukünftigen Sales- und Marketingstrategien mitzuwirken." data-en="Internationally experienced, analytical, customer-oriented and motivated to contribute to future sales and marketing strategies."></p><div class="contacts"><a href="mailto:jan.kraege@icloud.com">Email</a><a href="https://www.linkedin.com/in/jan-kraege" target="_blank" rel="noopener">LinkedIn</a></div></div></div></section>
 </main>
 <footer><div class="container foot"><span>© 2026 Jan Kraege</span><span data-de="Persönliche Bewerbungswebsite · Keine offizielle Website der AUDI AG" data-en="Personal application website · Not an official AUDI AG website"></span></div></footer>
+
 <script>
-function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-de]').forEach(el=>{const v=el.dataset[lang];if(v!==undefined)el.textContent=v});deBtn.classList.toggle('active',lang==='de');enBtn.classList.toggle('active',lang==='en')}
-deBtn.addEventListener('click',()=>setLanguage('de'));enBtn.addEventListener('click',()=>setLanguage('en'));setLanguage('de');
+let currentLang = "de";
+
+const $ = (id) => document.getElementById(id);
+
+function setLanguage(lang){
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-de]").forEach(el=>{
+    const v = el.dataset[lang];
+    if(v !== undefined) el.textContent = v;
+  });
+
+  $("deBtn").classList.toggle("active",lang==="de");
+  $("enBtn").classList.toggle("active",lang==="en");
+
+  updateSimulation();
+}
+
+$("deBtn").addEventListener("click",()=>setLanguage("de"));
+$("enBtn").addEventListener("click",()=>setLanguage("en"));
+
+const sim = {
+  customers: $("customers"),
+  adoption: $("adoption"),
+  uplift: $("uplift"),
+  margin: $("margin"),
+  complexity: $("complexity")
+};
+
+function clamp(v,min,max){ return Math.max(min,Math.min(max,v)); }
+function norm(v,min,max){ return clamp((v-min)/(max-min)*100,0,100); }
+
+function setRangeFill(input){
+  const min = Number(input.min);
+  const max = Number(input.max);
+  const val = Number(input.value);
+  const pct = ((val-min)/(max-min))*100;
+  input.style.setProperty("--range-pct", pct + "%");
+}
+
+function formatNumber(n){
+  return new Intl.NumberFormat(currentLang==="de" ? "de-DE" : "en-US").format(Math.round(n));
+}
+
+function calculateScore(adoption,uplift,margin,complexity){
+  const adoptionScore = norm(adoption,5,45);
+  const upliftScore = norm(uplift,5,35);
+  const marginScore = norm(margin,20,55);
+  const executionScore = 100 - norm(complexity,10,90);
+
+  const total = adoptionScore*.30 + upliftScore*.25 + marginScore*.25 + executionScore*.20;
+
+  return {
+    total: clamp(total,0,100),
+    adoptionScore,
+    upliftScore,
+    marginScore,
+    executionScore
+  };
+}
+
+function recommendation(score, complexity){
+  if(score >= 70 && complexity <= 65){
+    return {
+      state:"GO",
+      cls:"go",
+      deTitle:"Skalierung nach validiertem Pilot sinnvoll",
+      enTitle:"Scale after a validated pilot",
+      deText:"Das Szenario kombiniert attraktive Adoption, KPI-Wirkung und Economics mit beherrschbarer Umsetzungskomplexität. Empfehlung: Pilot in priorisierten Segmenten, Economics validieren und bei bestätigter Wirkung skalieren.",
+      enText:"The scenario combines attractive adoption, KPI impact and economics with manageable implementation complexity. Recommendation: pilot in priority segments, validate the economics and scale if the impact is confirmed."
+    };
+  }
+
+  if(score >= 48){
+    return {
+      state:"ADAPT",
+      cls:"adapt",
+      deTitle:"Value Proposition oder Umsetzung gezielt anpassen",
+      enTitle:"Adapt the value proposition or execution model",
+      deText:"Das Modell zeigt Potenzial, aber mindestens ein Treiber begrenzt die Attraktivität. Empfehlung: Pricing, Zielsegment, Customer Journey oder Umsetzungsdesign optimieren und anschließend erneut testen.",
+      enText:"The model shows potential, but at least one driver limits attractiveness. Recommendation: refine pricing, target segment, customer journey or implementation design and test again."
+    };
+  }
+
+  return {
+    state:"NO-GO",
+    cls:"nogo",
+    deTitle:"Unter diesen Annahmen nicht skalieren",
+    enTitle:"Do not scale under these assumptions",
+    deText:"Die aktuelle Kombination aus Adoption, KPI-Wirkung, Marge und Umsetzungsaufwand rechtfertigt keine Skalierung. Empfehlung: Hypothese überarbeiten oder alternative Retention- und Growth-Hebel priorisieren.",
+    enText:"The current combination of adoption, KPI impact, margin and implementation effort does not justify scaling. Recommendation: revisit the hypothesis or prioritise alternative retention and growth levers."
+  };
+}
+
+function sizeCanvas(canvas){
+  const rect = canvas.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = Math.max(1, Math.round(rect.width*dpr));
+  canvas.height = Math.max(1, Math.round(rect.height*dpr));
+  const ctx = canvas.getContext("2d");
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  return {ctx,w:rect.width,h:rect.height};
+}
+
+function drawDriverChart(values){
+  const canvas = $("driverChart");
+  if(!canvas) return;
+  const {ctx,w,h} = sizeCanvas(canvas);
+
+  ctx.clearRect(0,0,w,h);
+  const pad = {l:34,r:12,t:14,b:42};
+  const cw = w-pad.l-pad.r;
+  const ch = h-pad.t-pad.b;
+
+  // grid
+  ctx.strokeStyle = "rgba(255,255,255,.08)";
+  ctx.lineWidth = 1;
+  for(let i=0;i<=4;i++){
+    const y = pad.t + ch*(i/4);
+    ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(w-pad.r,y); ctx.stroke();
+  }
+
+  const labels = currentLang==="de"
+    ? ["Adoption","KPI-Uplift","Marge","Execution"]
+    : ["Adoption","KPI uplift","Margin","Execution"];
+
+  const vals = [values.adoptionScore,values.upliftScore,values.marginScore,values.executionScore];
+  const gap = 13;
+  const bw = Math.max(18,(cw-gap*(vals.length-1))/vals.length);
+
+  vals.forEach((v,i)=>{
+    const x = pad.l + i*(bw+gap);
+    const bh = ch*(v/100);
+    const y = pad.t+ch-bh;
+
+    const g = ctx.createLinearGradient(0,y,0,pad.t+ch);
+    g.addColorStop(0,"rgba(255,75,80,.95)");
+    g.addColorStop(1,"rgba(215,25,32,.42)");
+    ctx.fillStyle = g;
+    roundRect(ctx,x,y,bw,bh,7);
+    ctx.fill();
+
+    ctx.fillStyle = "rgba(245,246,248,.92)";
+    ctx.font = "700 11px Inter, system-ui, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(Math.round(v),x+bw/2,Math.max(12,y-6));
+
+    ctx.fillStyle = "rgba(166,173,183,.92)";
+    ctx.font = "10px Inter, system-ui, sans-serif";
+    const label = labels[i];
+    ctx.fillText(label,x+bw/2,h-16);
+  });
+}
+
+function drawSensitivityChart(uplift,margin,complexity,currentAdoption){
+  const canvas = $("sensitivityChart");
+  if(!canvas) return;
+  const {ctx,w,h} = sizeCanvas(canvas);
+  ctx.clearRect(0,0,w,h);
+
+  const pad = {l:34,r:14,t:14,b:34};
+  const cw = w-pad.l-pad.r;
+  const ch = h-pad.t-pad.b;
+
+  function yFor(score){ return pad.t + ch*(1-score/100); }
+  function xFor(a){ return pad.l + cw*((a-5)/40); }
+
+  // threshold backgrounds
+  ctx.fillStyle = "rgba(239,84,89,.055)";
+  ctx.fillRect(pad.l,yFor(48),cw,pad.t+ch-yFor(48));
+
+  ctx.fillStyle = "rgba(241,174,63,.045)";
+  ctx.fillRect(pad.l,yFor(70),cw,yFor(48)-yFor(70));
+
+  ctx.fillStyle = "rgba(68,197,140,.045)";
+  ctx.fillRect(pad.l,pad.t,cw,yFor(70)-pad.t);
+
+  // grid / thresholds
+  [0,25,50,75,100].forEach(s=>{
+    const y=yFor(s);
+    ctx.strokeStyle="rgba(255,255,255,.07)";
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();
+  });
+
+  [48,70].forEach(s=>{
+    const y=yFor(s);
+    ctx.strokeStyle=s===70 ? "rgba(68,197,140,.28)" : "rgba(241,174,63,.28)";
+    ctx.setLineDash([4,5]);
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(w-pad.r,y);ctx.stroke();
+    ctx.setLineDash([]);
+  });
+
+  // line
+  const pts=[];
+  for(let a=5;a<=45;a+=2){
+    const score=calculateScore(a,uplift,margin,complexity).total;
+    pts.push([xFor(a),yFor(score)]);
+  }
+
+  const grad=ctx.createLinearGradient(pad.l,0,w-pad.r,0);
+  grad.addColorStop(0,"rgba(255,255,255,.45)");
+  grad.addColorStop(.55,"rgba(255,75,80,.95)");
+  grad.addColorStop(1,"rgba(215,25,32,.95)");
+  ctx.strokeStyle=grad;
+  ctx.lineWidth=2.5;
+  ctx.beginPath();
+  pts.forEach((p,i)=> i===0 ? ctx.moveTo(p[0],p[1]) : ctx.lineTo(p[0],p[1]));
+  ctx.stroke();
+
+  // current marker
+  const currentScore=calculateScore(currentAdoption,uplift,margin,complexity).total;
+  const cx=xFor(currentAdoption), cy=yFor(currentScore);
+  ctx.strokeStyle="rgba(255,255,255,.28)";
+  ctx.setLineDash([3,5]);
+  ctx.beginPath();ctx.moveTo(cx,pad.t);ctx.lineTo(cx,pad.t+ch);ctx.stroke();
+  ctx.setLineDash([]);
+
+  ctx.fillStyle="#fff";
+  ctx.beginPath();ctx.arc(cx,cy,4.5,0,Math.PI*2);ctx.fill();
+  ctx.strokeStyle="rgba(215,25,32,.95)";
+  ctx.lineWidth=3;ctx.stroke();
+
+  // x labels
+  ctx.fillStyle="rgba(166,173,183,.9)";
+  ctx.font="10px Inter, system-ui, sans-serif";
+  ctx.textAlign="center";
+  [5,15,25,35,45].forEach(a=>ctx.fillText(a+"%",xFor(a),h-11));
+}
+
+function roundRect(ctx,x,y,w,h,r){
+  r=Math.min(r,w/2,h/2);
+  ctx.beginPath();
+  ctx.moveTo(x+r,y);
+  ctx.arcTo(x+w,y,x+w,y+h,r);
+  ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);
+  ctx.arcTo(x,y,x+w,y,r);
+  ctx.closePath();
+}
+
+function updateSimulation(){
+  if(!sim.customers) return;
+
+  const customers = Number(sim.customers.value);
+  const adoption = Number(sim.adoption.value);
+  const uplift = Number(sim.uplift.value);
+  const margin = Number(sim.margin.value);
+  const complexity = Number(sim.complexity.value);
+
+  Object.values(sim).forEach(setRangeFill);
+
+  $("customerValue").textContent = formatNumber(customers);
+  $("adoptionValue").textContent = adoption + "%";
+  $("upliftValue").textContent = uplift + " pp";
+  $("marginValue").textContent = margin + "%";
+  $("complexityValue").textContent = complexity + " / 100";
+
+  const subscribers = customers*(adoption/100);
+  const values = calculateScore(adoption,uplift,margin,complexity);
+  const rec = recommendation(values.total,complexity);
+
+  $("subscriberMetric").textContent = formatNumber(subscribers);
+  $("scoreMetric").textContent = Math.round(values.total) + " / 100";
+  $("readinessMetric").textContent = Math.round(values.executionScore) + " / 100";
+  $("upliftMetric").textContent = "+" + uplift + " pp";
+
+  const state = $("recoState");
+  state.textContent = rec.state;
+  state.className = "reco-state " + rec.cls;
+  $("recoTitle").textContent = currentLang==="de" ? rec.deTitle : rec.enTitle;
+  $("recoText").textContent = currentLang==="de" ? rec.deText : rec.enText;
+
+  drawDriverChart(values);
+  drawSensitivityChart(uplift,margin,complexity,adoption);
+}
+
+Object.values(sim).forEach(input=>{
+  input.addEventListener("input",updateSimulation);
+});
+
+// page motion: vehicle position tied to scroll, slight parallax in hero
+const vehicle = $("scrollVehicle");
+const heroCopy = document.querySelector(".hero > .container > div:first-child") || document.querySelector(".herogrid > div:first-child");
+const house = document.querySelector(".housewrap");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function updateMotion(){
+  if(reduceMotion || !vehicle) return;
+
+  const doc = document.documentElement;
+  const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight);
+  const progress = clamp(window.scrollY / maxScroll, 0, 1);
+
+  const x = -210 + progress * (window.innerWidth + 230);
+  const bob = Math.sin(progress * Math.PI * 14) * 1.4;
+  vehicle.style.transform = `translate3d(${x}px,${bob}px,0)`;
+  vehicle.classList.toggle("visible", window.scrollY > 120 && progress < .985);
+
+  if(window.scrollY < window.innerHeight * 1.15){
+    const hp = clamp(window.scrollY / window.innerHeight,0,1);
+    if(heroCopy) heroCopy.style.transform = `translate3d(0,${hp*-18}px,0)`;
+    if(house) house.style.transform = `translate3d(0,${hp*18}px,0)`;
+  }
+}
+
+let motionTick=false;
+window.addEventListener("scroll",()=>{
+  if(!motionTick){
+    requestAnimationFrame(()=>{
+      updateMotion();
+      motionTick=false;
+    });
+    motionTick=true;
+  }
+},{passive:true});
+
+window.addEventListener("resize",()=>{
+  updateSimulation();
+  updateMotion();
+});
+
+setLanguage("de");
+updateMotion();
 </script>
+
 </body>
 </html>
