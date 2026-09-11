@@ -339,6 +339,77 @@ section>.container{position:relative;z-index:2}
   .scroll-vehicle-wrap .wheel{animation:none!important}
 }
 
+
+/* ===== V3: LIGHTER AUTOMOTIVE SHOWCASE ===== */
+:root{--bg:#f4f1ec;--panel:#ffffff;--panel2:#fbf9f6;--text:#18202a;--muted:#5e6773;--line:rgba(14,22,35,.12);--line-soft:rgba(14,22,35,.08);--shadow:0 24px 55px rgba(17,25,40,.08)}
+body{background:radial-gradient(circle at 20% 0%,rgba(214,172,137,.24),transparent 28%),linear-gradient(180deg,#f7f4ef 0%,#f2f1ef 38%,#eef1f4 100%);color:var(--text)}
+p,.head p,.lead,.jcard p,.wcard p,.lcard p,.ecocard p,.simulator-head p,.disclaimer,.step span,.metric span{color:var(--muted)}
+nav{background:rgba(250,248,244,.86);border-bottom:1px solid rgba(17,24,39,.08)}
+.links,.lang button,.caption,.threshold,.demo-pill,.chart-note{color:#5d6672}
+.lang button.active{background:#161a22;color:#fff}
+.brandmark{background:rgba(17,24,39,.03)}
+.panel{background:transparent}
+.card,.jcard,.wcard,.lcard,.finalcard,.case,.casepanel,.ecocard,.emap,.simulator,.reco-card,.kpi-box,.chart-card,.take,.threshold{background:rgba(255,255,255,.72);backdrop-filter:blur(10px);border-color:rgba(16,24,40,.10);box-shadow:var(--shadow)}
+.casehead{background:linear-gradient(115deg,rgba(255,255,255,.88),rgba(248,243,237,.9) 68%,rgba(215,25,32,.08));border-bottom:1px solid rgba(16,24,40,.08)}
+.kicker,.idx,.num,.accent{color:#ca1722}
+.kicker:before{background:#ca1722}
+.btn{background:rgba(255,255,255,.72);border-color:rgba(17,24,39,.12);color:#18202a}
+.btn.primary{background:#c91420;border-color:#c91420;color:#fff}
+.road:before{background:linear-gradient(#ca1722,rgba(17,24,39,.12))}
+.journey:before{background:#fff;box-shadow:0 0 0 5px rgba(202,23,34,.08);border-color:#ca1722}
+.badge{background:#178c60;color:#fff}
+.center{background:radial-gradient(circle,rgba(201,32,41,.13),rgba(201,32,41,.03));border-color:rgba(201,32,41,.35);color:#1d232e}
+.node{background:rgba(255,255,255,.82);border-color:rgba(17,24,39,.09);color:#1f2630}
+.scroll-vehicle-wrap.visible{opacity:.28}
+.motion-road{opacity:.22;background:linear-gradient(90deg,transparent,rgba(17,24,39,.10) 8%,rgba(17,24,39,.16) 50%,rgba(17,24,39,.10) 92%,transparent)}
+
+.hero{padding:42px 0 78px;min-height:auto}
+.hero:before{display:none}
+.hero-showcase{display:grid;grid-template-columns:.94fr 1.06fr;gap:28px;align-items:center;min-height:660px;padding:56px;border-radius:34px;overflow:hidden;position:relative;background:linear-gradient(120deg,#fff9f3 0%,#f3e3d4 26%,#d6beb0 53%,#eae7e2 100%);border:1px solid rgba(94,72,55,.12);box-shadow:0 35px 90px rgba(30,33,43,.10)}
+.hero-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 18%,rgba(165,86,38,.22),transparent 28%),radial-gradient(circle at 92% 24%,rgba(255,255,255,.4),transparent 20%);pointer-events:none}
+.hero-copy{position:relative;z-index:2;max-width:620px}
+.hero-copy h1{font-size:clamp(3.4rem,6vw,5.9rem);line-height:.95;color:#fbfbfc;text-shadow:0 6px 25px rgba(42,18,10,.20)}
+.hero-copy .lead{font-size:1.08rem;max-width:600px;color:#ffffffd0;text-shadow:0 2px 10px rgba(56,32,22,.12)}
+.hero-copy .eyebrow{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(6px)}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.hero-pills span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);font-size:.8rem;font-weight:800;color:#fff;backdrop-filter:blur(8px)}
+.hero-note{margin-top:18px;max-width:640px;font-size:.72rem;color:#f6f0eacc;text-shadow:0 1px 8px rgba(56,32,22,.12)}
+.hero .actions{margin-top:24px}
+.hero .btn{background:rgba(255,255,255,.82);border-color:rgba(255,255,255,.34)}
+.hero .btn.primary{background:#c91420;border-color:#c91420}
+.hero-visual{position:relative;z-index:1;min-height:560px}
+.hero-floor{position:absolute;left:-2%;right:-4%;bottom:0;height:185px;border-radius:55% 45% 0 0/100% 100% 0 0;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.72));box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
+.hero-ribbon{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.36);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.08));backdrop-filter:blur(1px)}
+.hero-ribbon.one{width:420px;height:540px;right:56px;top:-60px;transform:rotate(22deg)}
+.hero-ribbon.two{width:320px;height:490px;right:-22px;top:-38px;transform:rotate(14deg);opacity:.72}
+.hero-ribbon.three{width:580px;height:610px;left:55px;bottom:-355px;transform:rotate(18deg);opacity:.42}
+.hero-car{position:absolute;bottom:72px;filter:drop-shadow(0 28px 34px rgba(0,0,0,.18));animation:floatCar 7s ease-in-out infinite}
+.hero-car svg{display:block;width:100%;height:auto}
+.hero-car.car-left{left:-5px;width:44%;z-index:2;animation-delay:.2s}
+.hero-car.car-center{left:27%;width:50%;z-index:4;animation-delay:0s}
+.hero-car.car-right{right:-5px;width:44%;z-index:3;animation-delay:.5s}
+@keyframes floatCar{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+#showroom .card,#journey .jcard,#work .wcard,.finalcard{background:rgba(255,255,255,.78)}
+.emap{background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(248,250,252,.78));box-shadow:var(--shadow)}
+.ecocard{background:rgba(255,255,255,.78)}
+.ecocard h3,.jcard h3,.card h3,.wcard strong,.metric strong,.casehead h3,.lcard h3,.finalcard h3,.reco-copy h4,.chart-card h5,.simulator-head h4,.control-label{color:#18202a}
+.casehead p,.casehead .kicker,.metric strong,.threshold b,.kpi-box strong{color:#18202a}
+.metric{background:rgba(250,250,251,.92)}
+.step{background:rgba(250,250,251,.92);border-color:rgba(17,24,39,.09)}
+.num{background:rgba(201,32,41,.10);color:#c21923}
+.take{background:rgba(255,255,255,.82)}
+.controls{border-right:1px solid rgba(17,24,39,.08)}
+.control{border-bottom:1px solid rgba(17,24,39,.08)}
+input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var(--red) var(--range-pct,50%),rgba(17,24,39,.12) var(--range-pct,50%),rgba(17,24,39,.12) 100%)}
+.chart-card{background:rgba(248,249,250,.90)}
+.disclaimer{border-left:2px solid rgba(17,24,39,.22);background:rgba(17,24,39,.03);color:#606874}
+.vehicle-ghost{opacity:.045}
+.contacts a,.tag{background:rgba(255,255,255,.78)}
+
+@media(max-width:1100px){.hero-showcase{grid-template-columns:1fr;min-height:auto;padding:40px}.hero-visual{min-height:430px}.hero-copy h1{max-width:900px}.hero-car.car-left{left:0;width:38%}.hero-car.car-center{left:24%;width:48%}.hero-car.car-right{right:0;width:38%}}
+@media(max-width:720px){.hero-showcase{padding:28px;border-radius:24px}.hero-copy h1{font-size:clamp(2.5rem,9vw,4rem)}.hero-pills{gap:8px}.hero-pills span{font-size:.72rem}.hero-visual{min-height:280px}.hero-car{bottom:38px}.hero-car.car-left{width:42%}.hero-car.car-center{left:22%;width:56%}.hero-car.car-right{width:42%}.hero-floor{height:105px}.hero-ribbon.one{width:230px;height:300px;right:28px;top:-18px}.hero-ribbon.two{width:175px;height:260px;right:-10px;top:5px}.hero-ribbon.three{width:310px;height:250px;left:20px;bottom:-120px}}
+
 </style>
 </head>
 <body>
@@ -361,7 +432,107 @@ section>.container{position:relative;z-index:2}
 </div>
 
 <main id="top">
-<section class="hero"><div class="container herogrid"><div><div class="eyebrow">Audi Global Graduate Program · Sales & Marketing Strategy</div><h1>Strategy.<br>Customer.<br><span class="accent">Future Sales.</span></h1><p class="lead" data-de="Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen." data-en="I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem."></p><div class="actions"><a class="btn primary" href="#showroom" data-de="Showroom betreten" data-en="Enter the showroom"></a><a class="btn" href="#case" data-de="Business Case ansehen" data-en="View business case"></a></div></div><div class="housewrap"><div class="house"><div class="roof"></div><div class="shell"><div class="room r1"><small>ROOM 01</small><b>Strategy Garage</b><span>Growth · Business Models · Transformation</span></div><div class="room r2"><small>ROOM 02</small><b>Customer Data Lab</b><span>CRM · Sales Data · Market Insights</span></div><div class="room r3"><small>ROOM 03</small><b>Digital Sales Studio</b><span>AI · Omnichannel · Subscription</span></div><div class="room r4"><small>ROOM 04</small><b>Leadership Lounge</b><span>Ownership · Teamwork · International</span></div><div class="floor"></div><div class="car"><svg viewBox="0 0 700 230" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M92 151C128 150 154 144 184 123C226 94 253 66 308 59C367 52 438 57 495 81C529 95 557 118 584 140C606 158 634 166 659 169" stroke="rgba(255,255,255,.88)" stroke-width="4" stroke-linecap="round"/><path d="M178 123C230 118 287 115 359 115C433 115 495 121 550 139" stroke="rgba(255,255,255,.35)" stroke-width="2.5" stroke-linecap="round"/><path d="M248 90C282 79 320 74 360 73C405 72 446 77 484 91" stroke="rgba(215,25,32,.9)" stroke-width="3" stroke-linecap="round"/><circle cx="213" cy="166" r="33" stroke="rgba(255,255,255,.82)" stroke-width="4"/><circle cx="546" cy="166" r="33" stroke="rgba(255,255,255,.82)" stroke-width="4"/><path d="M87 169H660" stroke="rgba(255,255,255,.18)" stroke-width="2"/></svg></div></div><div class="caption" data-de="Konzept: persönliche Bewerbungswebsite · kein offizieller Audi-Auftritt" data-en="Concept: personal application website · not an official Audi website"></div></div></div></div></section>
+<section class="hero hero-lite">
+  <div class="container">
+    <div class="hero-showcase">
+      <div class="hero-copy">
+        <div class="eyebrow">Audi Global Graduate Program · Sales & Marketing Strategy</div>
+        <h1 data-de="Strategie mit Kundenfokus.<br><span class="accent">Future Sales</span> in Bewegung."
+            data-en="Strategy with customer focus.<br><span class="accent">Future Sales</span> in motion."></h1>
+        <p class="lead" data-de="Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen."
+           data-en="I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem."></p>
+        <div class="hero-pills">
+          <span data-de="Customer & Market Insights" data-en="Customer & Market Insights"></span>
+          <span data-de="Digital Business Models" data-en="Digital Business Models"></span>
+          <span data-de="International Perspective" data-en="International Perspective"></span>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="#showroom" data-de="Showroom betreten" data-en="Enter the showroom"></a>
+          <a class="btn" href="#case" data-de="Business Case ansehen" data-en="View business case"></a>
+        </div>
+        <div class="hero-note" data-de="Persönliche Bewerbungswebsite – visuell inspiriert von modernen Automotive-Digitalerlebnissen, kein offizieller Audi-Auftritt."
+             data-en="Personal application website – visually inspired by modern automotive digital experiences, not an official Audi website."></div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-ribbon one"></div>
+        <div class="hero-ribbon two"></div>
+        <div class="hero-ribbon three"></div>
+        <div class="hero-floor"></div>
+
+        <div class="hero-car car-left">
+          <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="carBlue" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#24364e"/>
+                <stop offset="100%" stop-color="#0c1827"/>
+              </linearGradient>
+              <linearGradient id="carBlueGlass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#9aa7b5" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#d9e1ea" stop-opacity="0.15"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="258" cy="230" rx="170" ry="12" fill="rgba(0,0,0,.18)"/>
+            <path d="M74 183c18-3 37-15 56-32 25-24 54-45 91-56 41-12 90-15 138-6 38 7 69 21 98 45 18 15 31 31 43 46-11 6-31 9-52 9H119c-20 0-35-1-45-6z" fill="url(#carBlue)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
+            <path d="M185 108c21-22 46-36 79-42 36-6 73-5 104 1 17 4 34 10 48 17 10 5 16 10 21 18-41-1-159-1-252 0z" fill="url(#carBlueGlass)"/>
+            <path d="M103 184h334" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
+            <circle cx="164" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="164" cy="188" r="16" fill="#5d6877"/>
+            <circle cx="382" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="382" cy="188" r="16" fill="#5d6877"/>
+            <path d="M402 146c14 0 25 10 25 24" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
+            <path d="M103 146c-12 2-21 11-24 21" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="hero-car car-center">
+          <svg viewBox="0 0 520 270" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="carRed" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#f03835"/>
+                <stop offset="100%" stop-color="#a50d12"/>
+              </linearGradient>
+              <linearGradient id="carRedGlass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff2f2" stop-opacity="0.46"/>
+                <stop offset="100%" stop-color="#e4b8bb" stop-opacity="0.12"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="260" cy="242" rx="188" ry="13" fill="rgba(0,0,0,.22)"/>
+            <path d="M58 188c18-6 36-21 58-42 27-27 57-49 96-61 46-14 100-17 152-8 42 7 74 23 101 46 20 17 33 34 46 53-12 6-34 10-58 10H111c-22 0-39-2-53-7z" fill="url(#carRed)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
+            <path d="M181 110c24-25 53-40 91-47 43-8 86-6 119 1 21 4 40 12 56 23 12 8 18 14 22 22-46-1-177-1-288 1z" fill="url(#carRedGlass)"/>
+            <path d="M105 188h354" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
+            <path d="M143 150c53-5 115-8 178-8 63 0 118 3 167 11" stroke="rgba(255,255,255,.14)" stroke-width="2.5"/>
+            <circle cx="169" cy="193" r="36" fill="#15191f" stroke="rgba(255,255,255,.45)" stroke-width="4"/><circle cx="169" cy="193" r="17" fill="#69727f"/>
+            <circle cx="391" cy="193" r="36" fill="#15191f" stroke="rgba(255,255,255,.45)" stroke-width="4"/><circle cx="391" cy="193" r="17" fill="#69727f"/>
+            <path d="M410 150c16 1 27 11 28 26" stroke="#fff1f1" stroke-width="4" stroke-linecap="round"/>
+            <path d="M107 152c-15 2-25 12-29 23" stroke="#fff1f1" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="hero-car car-right">
+          <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="carGrey" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#69727a"/>
+                <stop offset="100%" stop-color="#2d343c"/>
+              </linearGradient>
+              <linearGradient id="carGreyGlass" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#edf1f5" stop-opacity="0.42"/>
+                <stop offset="100%" stop-color="#d8dee6" stop-opacity="0.12"/>
+              </linearGradient>
+            </defs>
+            <ellipse cx="258" cy="230" rx="170" ry="12" fill="rgba(0,0,0,.18)"/>
+            <path d="M74 183c18-3 37-15 56-32 25-24 54-45 91-56 41-12 90-15 138-6 38 7 69 21 98 45 18 15 31 31 43 46-11 6-31 9-52 9H119c-20 0-35-1-45-6z" fill="url(#carGrey)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
+            <path d="M185 108c21-22 46-36 79-42 36-6 73-5 104 1 17 4 34 10 48 17 10 5 16 10 21 18-41-1-159-1-252 0z" fill="url(#carGreyGlass)"/>
+            <path d="M103 184h334" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
+            <circle cx="164" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="164" cy="188" r="16" fill="#5d6877"/>
+            <circle cx="382" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="382" cy="188" r="16" fill="#5d6877"/>
+            <path d="M402 146c14 0 25 10 25 24" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
+            <path d="M103 146c-12 2-21 11-24 21" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="showroom" class="panel"><div class="container"><div class="head"><div class="kicker">01 · THE APPLICATION HOUSE</div><h2 data-de="Vier Räume. Ein Profil." data-en="Four rooms. One profile."></h2><p data-de="Die Website ist wie ein modernes Sales- und Strategiehaus aufgebaut: Jeder Raum steht für einen Teil meines Profils, der zum Zielbereich Sales & Marketing Strategy passt." data-en="The website is structured like a modern sales and strategy house: each room represents a part of my profile relevant to the Sales & Marketing Strategy target field."></p></div><div class="grid4"><article class="card"><div class="idx">ROOM 01</div><h3>Strategy Garage</h3><p data-de="Strategische Fragestellungen strukturieren, Wachstumschancen bewerten und daraus klare Managementempfehlungen entwickeln." data-en="Structure strategic questions, evaluate growth opportunities and translate them into clear management recommendations."></p></article><article class="card"><div class="idx">ROOM 02</div><h3>Customer Data Lab</h3><p data-de="Kunden-, Sales-, Kampagnen- und Marktdaten analysieren, Muster erkennen und datenbasierte Entscheidungen vorbereiten." data-en="Analyse customer, sales, campaign and market data, identify patterns and support data-driven decision-making."></p></article><article class="card"><div class="idx">ROOM 03</div><h3>Digital Sales Studio</h3><p data-de="Digitale Geschäftsmodelle, CRM, AI und neue Customer Journeys als Hebel für Wachstum und zukünftige Vertriebssysteme verstehen." data-en="Understand digital business models, CRM, AI and new customer journeys as levers for growth and future sales ecosystems."></p></article><article class="card"><div class="idx">ROOM 04</div><h3>Leadership Lounge</h3><p data-de="Ownership, klare Kommunikation und Zusammenarbeit in internationalen Teams – ergänzt durch Führungserfahrung als Jugendtrainer." data-en="Ownership, clear communication and collaboration in international teams – complemented by leadership experience as a youth coach."></p></article></div></div></section>
 <section id="journey"><div class="container"><div class="head"><div class="kicker">02 · MY ROAD</div><h2 data-de="Mein Weg Richtung Sales & Marketing Strategy." data-en="My road toward Sales & Marketing Strategy."></h2><p data-de="Internationales Studium, kommerzielle Projekte und datenbasierte Marketing-Erfahrung bilden gemeinsam die Grundlage für meinen nächsten Schritt." data-en="International studies, commercial projects and data-driven marketing experience together form the basis for my next step."></p></div><div class="road"><div class="journey"><div class="date">2020 – 2024</div><div class="jcard"><h3>Bachelor of Business Administration</h3><div class="place">Hochschule Fresenius · Wiesbaden</div><p data-de="Marketing, International Management und Organisationspsychologie; Auslandssemester an der University of Technology Sydney." data-en="Marketing, International Management and Organisational Psychology; semester abroad at the University of Technology Sydney."></p></div></div><div class="journey"><div class="date">2022 – 2023</div><div class="jcard"><h3>BRITA Australia · Sales & Marketing Assistant</h3><div class="place">Sydney, Australia</div><p data-de="Entwicklung und Bewertung eines Subscription-Modells, Analyse von Sales- und Kundendaten sowie Ableitung einer strukturierten Go/No-Go-Empfehlung." data-en="Developed and assessed a subscription model, analysed sales and customer data and derived a structured go/no-go recommendation."></p></div></div><div class="journey"><div class="date">2025 – 2026</div><div class="jcard"><h3>Master of Management</h3><div class="place">University of Technology Sydney · Australia</div><p>Global Strategic Management · Creative Problem Solving · Managing Change · Managing in a Multicultural World</p></div></div><div class="journey"><div class="date">2026</div><div class="jcard"><h3>Tokyo Headspa · Marketing Intern</h3><div class="place">Sydney, Australia</div><p data-de="Markt- und Wettbewerbsanalysen, CRM- und Kampagnendaten, Wachstumschancen, Serviceportfolio sowie generative KI für Recherche und Ideation." data-en="Market and competitor analysis, CRM and campaign data, growth opportunities, service portfolio development and generative AI for research and ideation."></p></div></div></div></div></section>
 
@@ -571,7 +742,7 @@ function setLanguage(lang){
 
   document.querySelectorAll("[data-de]").forEach(el=>{
     const v = el.dataset[lang];
-    if(v !== undefined) el.textContent = v;
+    if(v !== undefined){ if(v.includes("<")) { el.innerHTML = v; } else { el.textContent = v; }}
   });
 
   $("deBtn").classList.toggle("active",lang==="de");
