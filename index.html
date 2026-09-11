@@ -447,6 +447,486 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
 @media(max-width:760px){.ecosystem-red .emap-wide{min-height:1720px}.ecosystem-red .map-lines{display:none}.ecosystem-red .wide-core{top:52%}.ecosystem-red .clean-node{width:calc(100% - 32px);left:16px!important;right:16px!important;transform:none!important}.ecosystem-red .pos-ai{top:96px}.ecosystem-red .pos-journey{top:270px}.ecosystem-red .pos-crm{top:474px}.ecosystem-red .pos-pricing{top:678px}.ecosystem-red .pos-omni{top:882px;bottom:auto}.ecosystem-red .pos-db{top:1086px;bottom:auto}.ecosystem-red .pos-exec{top:1290px;bottom:auto;left:16px;transform:none!important}.ecosystem-red .wide-core{top:auto;bottom:120px;left:50%;transform:translateX(-50%);width:180px;height:180px}.ecosystem-red .ecocard{padding:20px}}
 
 
+
+/* =========================================================
+   V9 — ABSOLUTE DARK RESET
+   Entire website: black / white / red. No image dependencies.
+   ========================================================= */
+
+:root{
+  --bg:#06070a !important;
+  --panel:#0b0d12 !important;
+  --panel2:#10131a !important;
+  --text:#f7f8fa !important;
+  --muted:#a7afbd !important;
+  --line:rgba(255,255,255,.11) !important;
+  --line-soft:rgba(255,255,255,.07) !important;
+  --red:#d71920 !important;
+  --red2:#ff4b50 !important;
+  --shadow:0 28px 70px rgba(0,0,0,.38) !important;
+}
+
+html,
+body{
+  background:#06070a !important;
+  color:#f7f8fa !important;
+}
+
+body{
+  background:
+    radial-gradient(circle at 82% 4%,rgba(215,25,32,.10),transparent 22%),
+    linear-gradient(180deg,#06070a 0%,#080a0e 50%,#06070a 100%) !important;
+}
+
+nav{
+  background:rgba(6,7,10,.92) !important;
+  border-bottom:1px solid rgba(255,255,255,.07) !important;
+  box-shadow:none !important;
+}
+
+.brand,
+.links a,
+.lang button{
+  color:#eef1f5 !important;
+}
+
+.links{
+  color:#a9b1bd !important;
+}
+
+.lang{
+  border-color:rgba(255,255,255,.12) !important;
+  background:rgba(255,255,255,.025) !important;
+}
+
+.lang button.active{
+  background:#f7f8fa !important;
+  color:#090b0f !important;
+}
+
+.brandmark{
+  background:rgba(255,255,255,.025) !important;
+  border-color:rgba(255,255,255,.12) !important;
+}
+
+section,
+.panel{
+  background:transparent !important;
+  color:#f7f8fa !important;
+}
+
+h1,h2,h3,h4,h5,
+.card h3,.jcard h3,.wcard strong,.lcard h3,.finalcard h3,
+.metric strong,.casehead h3,.reco-copy h4,.chart-card h5,
+.simulator-head h4,.control-label,.ecocard h3{
+  color:#f7f8fa !important;
+}
+
+p,.lead,.head p,.jcard p,.wcard p,.lcard p,.ecocard p,
+.step span,.metric span,.disclaimer,.chart-note,
+.control-help,.hero-note{
+  color:#a7afbd !important;
+}
+
+.kicker{
+  color:#d9dee7 !important;
+}
+.kicker:before{
+  background:#d71920 !important;
+}
+
+.card,.jcard,.wcard,.lcard,.finalcard,.case,.casepanel,
+.simulator,.reco-card,.kpi-box,.chart-card,.take,.threshold,
+.ecocard,.emap{
+  background:linear-gradient(180deg,#0d1016,#090b10) !important;
+  border-color:rgba(255,255,255,.085) !important;
+  box-shadow:none !important;
+}
+
+.casehead{
+  background:
+    radial-gradient(circle at 88% 20%,rgba(215,25,32,.13),transparent 28%),
+    linear-gradient(120deg,#10131a,#0a0c11) !important;
+  border-color:rgba(255,255,255,.08) !important;
+}
+
+.metric,.step{
+  background:rgba(255,255,255,.025) !important;
+  border-color:rgba(255,255,255,.07) !important;
+}
+
+.contacts a,.tag{
+  background:rgba(255,255,255,.025) !important;
+  color:#e5e9ef !important;
+  border-color:rgba(255,255,255,.09) !important;
+}
+
+input[type="range"].sim-range{
+  background:linear-gradient(
+    90deg,
+    var(--red) 0%,
+    var(--red) var(--range-pct,50%),
+    rgba(255,255,255,.12) var(--range-pct,50%),
+    rgba(255,255,255,.12) 100%
+  ) !important;
+}
+
+/* HERO */
+.hero-v9{
+  padding:56px 0 92px !important;
+  background:transparent !important;
+}
+
+.hero-v9:before{
+  display:none !important;
+}
+
+.hero-showcase-v9{
+  position:relative;
+  display:grid;
+  grid-template-columns:.95fr 1.05fr;
+  align-items:center;
+  gap:46px;
+  min-height:700px;
+  padding:68px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:34px;
+  background:
+    radial-gradient(circle at 18% 20%,rgba(215,25,32,.16),transparent 24%),
+    radial-gradient(circle at 88% 72%,rgba(215,25,32,.08),transparent 25%),
+    linear-gradient(135deg,#08090d 0%,#0c0f15 52%,#07080c 100%);
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+.hero-showcase-v9:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.42),transparent 92%);
+}
+
+.hero-copy-v9{
+  position:relative;
+  z-index:3;
+  max-width:670px;
+}
+
+.hero-copy-v9 .eyebrow{
+  display:inline-flex;
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.035);
+  color:#f2f4f7 !important;
+  font-size:.78rem;
+  font-weight:850;
+  margin-bottom:26px;
+}
+
+.hero-copy-v9 h1{
+  margin:0 0 28px;
+  font-size:clamp(3.7rem,6.4vw,6.65rem);
+  line-height:.92;
+  letter-spacing:-.055em;
+  color:#fff !important;
+}
+
+.hero-copy-v9 h1 .accent{
+  color:#ff4148 !important;
+}
+
+.hero-copy-v9 .lead{
+  max-width:650px;
+  font-size:1.08rem;
+  line-height:1.72;
+  color:#c5ccd6 !important;
+}
+
+.hero-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:24px;
+}
+
+.hero-pills span{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.035) !important;
+  border:1px solid rgba(255,255,255,.11) !important;
+  color:#edf0f4 !important;
+  font-size:.78rem;
+  font-weight:800;
+}
+
+.hero-v9 .actions{
+  margin-top:29px;
+}
+
+.hero-v9 .btn{
+  color:#fff !important;
+  background:transparent !important;
+  border-color:rgba(255,255,255,.18) !important;
+}
+
+.hero-v9 .btn.primary{
+  background:#d71920 !important;
+  border-color:#d71920 !important;
+}
+
+/* right-hand graphic — pure CSS/SVG, no image */
+.hero-graphic-v9{
+  position:relative;
+  z-index:2;
+  min-height:560px;
+  border-radius:28px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 52%,rgba(215,25,32,.13),transparent 25%),
+    linear-gradient(145deg,#0c0f15,#080a0f);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.hero-graphic-v9:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:48px 48px;
+  opacity:.65;
+}
+
+.speed-ring{
+  position:absolute;
+  left:50%;
+  top:51%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  border:1px solid rgba(215,25,32,.18);
+}
+
+.ring-1{width:330px;height:330px}
+.ring-2{width:430px;height:430px;border-color:rgba(255,255,255,.055)}
+.ring-3{width:540px;height:540px;border-color:rgba(215,25,32,.08)}
+
+.hero-route{
+  position:absolute;
+  inset:40px 24px 55px;
+  z-index:1;
+}
+
+.hero-route svg{
+  width:100%;
+  height:100%;
+}
+
+.route-base{
+  fill:none;
+  stroke:rgba(255,255,255,.12);
+  stroke-width:3;
+  stroke-linecap:round;
+}
+
+.route-red{
+  fill:none;
+  stroke:#d71920;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-dasharray:14 18;
+  animation:routeFlow 5s linear infinite;
+}
+
+@keyframes routeFlow{
+  to{stroke-dashoffset:-160}
+}
+
+.motion-car{
+  position:absolute;
+  left:54%;
+  top:47%;
+  width:178px;
+  height:76px;
+  z-index:4;
+  transform:translate(-50%,-50%) rotate(-8deg);
+  animation:carFloat 4.8s ease-in-out infinite;
+}
+
+@keyframes carFloat{
+  0%,100%{transform:translate(-50%,-50%) rotate(-8deg) translateY(0)}
+  50%{transform:translate(-50%,-50%) rotate(-8deg) translateY(-7px)}
+}
+
+.car-body{
+  position:absolute;
+  left:13px;
+  right:13px;
+  bottom:17px;
+  height:36px;
+  border-radius:42% 44% 23% 23% / 55% 55% 38% 38%;
+  background:linear-gradient(100deg,#790b11,#e42129 46%,#8d0d13);
+  border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 15px 24px rgba(0,0,0,.42);
+}
+
+.car-roof{
+  position:absolute;
+  width:94px;
+  height:27px;
+  left:42px;
+  bottom:43px;
+  border-radius:60% 62% 10% 10%;
+  transform:skewX(-9deg);
+  background:linear-gradient(120deg,#222832,#0c1016);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.car-wheel{
+  position:absolute;
+  bottom:5px;
+  width:29px;
+  height:29px;
+  border-radius:50%;
+  background:#08090c;
+  border:4px solid #343b45;
+  box-shadow:inset 0 0 0 4px #11151b;
+}
+
+.wheel-a{left:34px}
+.wheel-b{right:30px}
+
+.car-light{
+  position:absolute;
+  right:8px;
+  bottom:37px;
+  width:31px;
+  height:3px;
+  border-radius:4px;
+  background:#fff;
+  box-shadow:18px 0 25px rgba(255,255,255,.35);
+}
+
+.telemetry{
+  position:absolute;
+  z-index:5;
+  width:206px;
+  padding:15px 16px;
+  border-radius:16px;
+  background:rgba(8,10,15,.90);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:0 16px 32px rgba(0,0,0,.24);
+}
+
+.telemetry small{
+  display:block;
+  margin-bottom:4px;
+  color:#ff555b;
+  font-weight:900;
+  font-size:.7rem;
+  letter-spacing:.09em;
+}
+
+.telemetry strong{
+  display:block;
+  color:#fff;
+  font-size:.9rem;
+}
+
+.telemetry span{
+  display:block;
+  margin-top:3px;
+  color:#9fa8b6;
+  font-size:.75rem;
+}
+
+.t1{left:25px;top:25px}
+.t2{right:25px;top:105px}
+.t3{right:42px;bottom:38px}
+
+.hero-graphic-label{
+  position:absolute;
+  left:32px;
+  bottom:35px;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  gap:9px;
+  color:#dfe4eb;
+  font-size:.7rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.hero-graphic-label b{
+  color:#d71920;
+}
+
+/* Retain completely dark section treatment */
+#showroom,#journey,#case,#ecosystem{
+  background:transparent !important;
+}
+
+footer{
+  background:#06070a !important;
+  border-top-color:rgba(255,255,255,.07) !important;
+  color:#747d89 !important;
+}
+
+@media(max-width:1050px){
+  .hero-showcase-v9{
+    grid-template-columns:1fr;
+    padding:42px;
+  }
+  .hero-graphic-v9{
+    min-height:520px;
+  }
+}
+
+@media(max-width:700px){
+  .hero-v9{padding-top:30px !important}
+  .hero-showcase-v9{
+    padding:28px;
+    border-radius:24px;
+  }
+  .hero-copy-v9 h1{
+    font-size:clamp(3rem,13vw,4.6rem);
+  }
+  .hero-graphic-v9{
+    min-height:620px;
+  }
+  .telemetry{
+    width:calc(100% - 32px);
+    left:16px !important;
+    right:16px !important;
+  }
+  .t1{top:16px}
+  .t2{top:118px}
+  .t3{bottom:18px}
+  .hero-graphic-label{
+    left:18px;
+    bottom:128px;
+    flex-wrap:wrap;
+  }
+  .motion-car{
+    top:55%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .route-red,
+  .motion-car{
+    animation:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -469,49 +949,84 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
 </div>
 
 <main id="top">
-<section class="hero hero-lite">
+
+<section class="hero hero-v9">
   <div class="container">
-    <div class="hero-showcase">
-      <div class="hero-copy">
+    <div class="hero-showcase-v9">
+      <div class="hero-copy-v9">
         <div class="eyebrow">Audi Global Graduate Program · Sales &amp; Marketing Strategy</div>
-        <h1 data-de='Strategie mit Kundenfokus.<br><span class="accent">Future Sales</span> in Bewegung.'
-            data-en='Strategy with customer focus.<br><span class="accent">Future Sales</span> in motion.'></h1>
-        <p class="lead" data-de='Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen.'
-           data-en='I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem.'></p>
+
+        <h1 data-de='Strategie mit<br>Kundenfokus.<br><span class="accent">Future Sales.</span>'
+            data-en='Strategy with<br>customer focus.<br><span class="accent">Future Sales.</span>'></h1>
+
+        <p class="lead"
+           data-de="Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen."
+           data-en="I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem."></p>
+
         <div class="hero-pills">
-          <span data-de="Customer &amp; Market Insights" data-en="Customer &amp; Market Insights"></span>
-          <span data-de="Digital Business Models" data-en="Digital Business Models"></span>
-          <span data-de="International Perspective" data-en="International Perspective"></span>
+          <span>Customer &amp; Market Insights</span>
+          <span>Digital Business Models</span>
+          <span>International Perspective</span>
         </div>
+
         <div class="actions">
-          <a class="btn primary" href="#showroom" data-de="Showroom betreten" data-en="Enter the showroom"></a>
+          <a class="btn primary" href="#showroom" data-de="Profil entdecken" data-en="Explore profile"></a>
           <a class="btn" href="#case" data-de="Business Case ansehen" data-en="View business case"></a>
         </div>
-        <div class="hero-note" data-de="Persönliche Bewerbungswebsite – visuell inspiriert von modernen Automotive-Digitalerlebnissen, kein offizieller Audi-Auftritt."
-             data-en="Personal application website – visually inspired by modern automotive digital experiences, not an official Audi website."></div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-glow"></div>
-        <div class="hero-image-card">
-          <img src="/mnt/data/ghostwriter_images/context/1a40e039-b7d9-59e3-88a8-f12133ae4f71.png" alt="Automotive digital inspiration">
-          <div class="hero-image-badge top" data-de="Inspiriert von modernen Automotive-Websites" data-en="Inspired by modern automotive websites"></div>
-          <div class="hero-image-badge bottom" data-de="Customer Focus · Digital Growth · Future Sales" data-en="Customer Focus · Digital Growth · Future Sales"></div>
+      <div class="hero-graphic-v9" aria-hidden="true">
+        <div class="speed-ring ring-1"></div>
+        <div class="speed-ring ring-2"></div>
+        <div class="speed-ring ring-3"></div>
+
+        <div class="hero-route">
+          <svg viewBox="0 0 760 500" xmlns="http://www.w3.org/2000/svg">
+            <path class="route-base"
+                  d="M52 376 C165 267, 260 416, 365 307 C467 201, 493 101, 694 142"/>
+            <path class="route-red"
+                  d="M52 376 C165 267, 260 416, 365 307 C467 201, 493 101, 694 142"/>
+          </svg>
         </div>
-        <div class="hero-mini-card card-one">
+
+        <div class="motion-car">
+          <div class="car-body"></div>
+          <div class="car-roof"></div>
+          <div class="car-wheel wheel-a"></div>
+          <div class="car-wheel wheel-b"></div>
+          <div class="car-light"></div>
+        </div>
+
+        <div class="telemetry t1">
           <small>01</small>
-          <strong data-de="Customer Insight" data-en="Customer Insight"></strong>
-          <span data-de="Kundenverhalten verstehen" data-en="Understand customer behaviour"></span>
+          <strong>Customer Insight</strong>
+          <span data-de="Daten → Verständnis" data-en="Data → understanding"></span>
         </div>
-        <div class="hero-mini-card card-two">
+
+        <div class="telemetry t2">
           <small>02</small>
-          <strong data-de="Strategy Translation" data-en="Strategy Translation"></strong>
-          <span data-de="Insights in Hebel übersetzen" data-en="Translate insights into action levers"></span>
+          <strong>Commercial Strategy</strong>
+          <span data-de="Insight → Entscheidung" data-en="Insight → decision"></span>
+        </div>
+
+        <div class="telemetry t3">
+          <small>03</small>
+          <strong>Execution</strong>
+          <span data-de="Strategie → Wirkung" data-en="Strategy → impact"></span>
+        </div>
+
+        <div class="hero-graphic-label">
+          <span>DATA</span>
+          <b>→</b>
+          <span>STRATEGY</span>
+          <b>→</b>
+          <span>GROWTH</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <section id="showroom" class="panel"><div class="container"><div class="head"><div class="kicker">01 · THE APPLICATION HOUSE</div><h2 data-de="Vier Räume. Ein Profil." data-en="Four rooms. One profile."></h2><p data-de="Die Website ist wie ein modernes Sales- und Strategiehaus aufgebaut: Jeder Raum steht für einen Teil meines Profils, der zum Zielbereich Sales & Marketing Strategy passt." data-en="The website is structured like a modern sales and strategy house: each room represents a part of my profile relevant to the Sales & Marketing Strategy target field."></p></div><div class="grid4"><article class="card"><div class="idx">ROOM 01</div><h3>Strategy Garage</h3><p data-de="Strategische Fragestellungen strukturieren, Wachstumschancen bewerten und daraus klare Managementempfehlungen entwickeln." data-en="Structure strategic questions, evaluate growth opportunities and translate them into clear management recommendations."></p></article><article class="card"><div class="idx">ROOM 02</div><h3>Customer Data Lab</h3><p data-de="Kunden-, Sales-, Kampagnen- und Marktdaten analysieren, Muster erkennen und datenbasierte Entscheidungen vorbereiten." data-en="Analyse customer, sales, campaign and market data, identify patterns and support data-driven decision-making."></p></article><article class="card"><div class="idx">ROOM 03</div><h3>Digital Sales Studio</h3><p data-de="Digitale Geschäftsmodelle, CRM, AI und neue Customer Journeys als Hebel für Wachstum und zukünftige Vertriebssysteme verstehen." data-en="Understand digital business models, CRM, AI and new customer journeys as levers for growth and future sales ecosystems."></p></article><article class="card"><div class="idx">ROOM 04</div><h3>Leadership Lounge</h3><p data-de="Ownership, klare Kommunikation und Zusammenarbeit in internationalen Teams – ergänzt durch Führungserfahrung als Jugendtrainer." data-en="Ownership, clear communication and collaboration in international teams – complemented by leadership experience as a youth coach."></p></article></div></div></section>
 <section id="journey"><div class="container"><div class="head"><div class="kicker">02 · MY ROAD</div><h2 data-de="Mein Weg Richtung Sales & Marketing Strategy." data-en="My road toward Sales & Marketing Strategy."></h2><p data-de="Internationales Studium, kommerzielle Projekte und datenbasierte Marketing-Erfahrung bilden gemeinsam die Grundlage für meinen nächsten Schritt." data-en="International studies, commercial projects and data-driven marketing experience together form the basis for my next step."></p></div><div class="road"><div class="journey"><div class="date">2020 – 2024</div><div class="jcard"><h3>Bachelor of Business Administration</h3><div class="place">Hochschule Fresenius · Wiesbaden</div><p data-de="Marketing, International Management und Organisationspsychologie; Auslandssemester an der University of Technology Sydney." data-en="Marketing, International Management and Organisational Psychology; semester abroad at the University of Technology Sydney."></p></div></div><div class="journey"><div class="date">2022 – 2023</div><div class="jcard"><h3>BRITA Australia · Sales & Marketing Assistant</h3><div class="place">Sydney, Australia</div><p data-de="Entwicklung und Bewertung eines Subscription-Modells, Analyse von Sales- und Kundendaten sowie Ableitung einer strukturierten Go/No-Go-Empfehlung." data-en="Developed and assessed a subscription model, analysed sales and customer data and derived a structured go/no-go recommendation."></p></div></div><div class="journey"><div class="date">2025 – 2026</div><div class="jcard"><h3>Master of Management</h3><div class="place">University of Technology Sydney · Australia</div><p>Global Strategic Management · Creative Problem Solving · Managing Change · Managing in a Multicultural World</p></div></div><div class="journey"><div class="date">2026</div><div class="jcard"><h3>Tokyo Headspa · Marketing Intern</h3><div class="place">Sydney, Australia</div><p data-de="Markt- und Wettbewerbsanalysen, CRM- und Kampagnendaten, Wachstumschancen, Serviceportfolio sowie generative KI für Recherche und Ideation." data-en="Market and competitor analysis, CRM and campaign data, growth opportunities, service portfolio development and generative AI for research and ideation."></p></div></div></div></div></section>
 
