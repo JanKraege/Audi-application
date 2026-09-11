@@ -365,29 +365,27 @@ nav{background:rgba(250,248,244,.86);border-bottom:1px solid rgba(17,24,39,.08)}
 
 .hero{padding:42px 0 78px;min-height:auto}
 .hero:before{display:none}
-.hero-showcase{display:grid;grid-template-columns:.94fr 1.06fr;gap:28px;align-items:center;min-height:660px;padding:56px;border-radius:34px;overflow:hidden;position:relative;background:linear-gradient(120deg,#fff9f3 0%,#f3e3d4 26%,#d6beb0 53%,#eae7e2 100%);border:1px solid rgba(94,72,55,.12);box-shadow:0 35px 90px rgba(30,33,43,.10)}
-.hero-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 22% 18%,rgba(165,86,38,.22),transparent 28%),radial-gradient(circle at 92% 24%,rgba(255,255,255,.4),transparent 20%);pointer-events:none}
+.hero-showcase{display:grid;grid-template-columns:.95fr 1.05fr;gap:32px;align-items:center;min-height:660px;padding:56px;border-radius:34px;overflow:hidden;position:relative;background:linear-gradient(140deg,#05070c 0%,#090d15 45%,#080b12 100%);border:1px solid rgba(255,255,255,.08);box-shadow:0 35px 90px rgba(0,0,0,.38)}
+.hero-showcase:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 18% 20%,rgba(215,25,32,.18),transparent 26%),radial-gradient(circle at 88% 18%,rgba(215,25,32,.10),transparent 22%),linear-gradient(180deg,rgba(255,255,255,.015),transparent 28%);pointer-events:none}
 .hero-copy{position:relative;z-index:2;max-width:620px}
-.hero-copy h1{font-size:clamp(3.4rem,6vw,5.9rem);line-height:.95;color:#fbfbfc;text-shadow:0 6px 25px rgba(42,18,10,.20)}
-.hero-copy .lead{font-size:1.08rem;max-width:600px;color:#ffffffd0;text-shadow:0 2px 10px rgba(56,32,22,.12)}
-.hero-copy .eyebrow{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(6px)}
+.hero-copy h1{font-size:clamp(3.35rem,6vw,5.7rem);line-height:.96;color:#fbfbfc;letter-spacing:-.03em;text-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hero-copy h1 .accent{color:#ff4b50}
+.hero-copy .lead{font-size:1.08rem;max-width:600px;color:#d4dae4}
+.hero-copy .eyebrow{display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);color:#fff;backdrop-filter:blur(6px)}
 .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.hero-pills span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.26);font-size:.8rem;font-weight:800;color:#fff;backdrop-filter:blur(8px)}
-.hero-note{margin-top:18px;max-width:640px;font-size:.72rem;color:#f6f0eacc;text-shadow:0 1px 8px rgba(56,32,22,.12)}
-.hero .actions{margin-top:24px}
-.hero .btn{background:rgba(255,255,255,.82);border-color:rgba(255,255,255,.34)}
-.hero .btn.primary{background:#c91420;border-color:#c91420}
-.hero-visual{position:relative;z-index:1;min-height:560px}
-.hero-floor{position:absolute;left:-2%;right:-4%;bottom:0;height:185px;border-radius:55% 45% 0 0/100% 100% 0 0;background:linear-gradient(180deg,rgba(255,255,255,.42),rgba(255,255,255,.72));box-shadow:inset 0 1px 0 rgba(255,255,255,.65)}
-.hero-ribbon{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.36);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.08));backdrop-filter:blur(1px)}
-.hero-ribbon.one{width:420px;height:540px;right:56px;top:-60px;transform:rotate(22deg)}
-.hero-ribbon.two{width:320px;height:490px;right:-22px;top:-38px;transform:rotate(14deg);opacity:.72}
-.hero-ribbon.three{width:580px;height:610px;left:55px;bottom:-355px;transform:rotate(18deg);opacity:.42}
-.hero-car{position:absolute;bottom:72px;filter:drop-shadow(0 28px 34px rgba(0,0,0,.18));animation:floatCar 7s ease-in-out infinite}
-.hero-car svg{display:block;width:100%;height:auto}
-.hero-car.car-left{left:-5px;width:44%;z-index:2;animation-delay:.2s}
-.hero-car.car-center{left:27%;width:50%;z-index:4;animation-delay:0s}
-.hero-car.car-right{right:-5px;width:44%;z-index:3;animation-delay:.5s}
+.hero-pills span{display:inline-flex;align-items:center;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);font-size:.8rem;font-weight:800;color:#edf1f6;backdrop-filter:blur(8px)}
+.hero-note{margin-top:18px;max-width:640px;font-size:.72rem;color:#9ea6b3}
+.hero .actions{margin-top:24px}.hero .btn{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.14);color:#fff}.hero .btn:hover{border-color:rgba(255,255,255,.24)}.hero .btn.primary{background:#d71920;border-color:#d71920;color:#fff}
+.hero-visual{position:relative;z-index:1;min-height:560px;display:flex;align-items:center;justify-content:center}
+.hero-glow{position:absolute;inset:auto 8% 6% 8%;height:52%;border-radius:50%;background:radial-gradient(circle,rgba(215,25,32,.22),rgba(215,25,32,.03) 55%,transparent 72%);filter:blur(20px)}
+.hero-image-card{position:relative;width:100%;max-width:760px;height:420px;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.10);box-shadow:0 26px 54px rgba(0,0,0,.34);background:#12161f;z-index:2}
+.hero-image-card img{width:100%;height:100%;object-fit:cover;object-position:72% 34%;display:block;filter:saturate(.92) contrast(1.03) brightness(.88)}
+.hero-image-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,8,12,.25),transparent 34%),linear-gradient(180deg,rgba(5,8,12,.08),rgba(5,8,12,.16));pointer-events:none}
+.hero-image-badge{position:absolute;left:20px;display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;background:rgba(5,8,12,.72);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);font-size:.76rem;font-weight:800;color:#fff;z-index:3}
+.hero-image-badge.top{top:18px}.hero-image-badge.bottom{bottom:18px}
+.hero-mini-card{position:absolute;z-index:3;display:flex;flex-direction:column;gap:4px;min-width:210px;padding:16px 18px;border-radius:18px;background:rgba(8,11,17,.88);border:1px solid rgba(255,255,255,.10);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.hero-mini-card small{font-size:.7rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#ff6a6f}.hero-mini-card strong{font-size:.95rem;line-height:1.2;color:#fff}.hero-mini-card span{font-size:.8rem;line-height:1.45;color:#b8c0cc}
+.hero-mini-card.card-one{left:-12px;bottom:58px}.hero-mini-card.card-two{right:-10px;top:62px}
 @keyframes floatCar{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
 
 #showroom .card,#journey .jcard,#work .wcard,.finalcard{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)}
@@ -406,8 +404,8 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
 .disclaimer{border-left:2px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#aab3c1}
 .vehicle-ghost{opacity:.085}
 .contacts a,.tag{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
-@media(max-width:1100px){.hero-showcase{grid-template-columns:1fr;min-height:auto;padding:40px}.hero-visual{min-height:430px}.hero-copy h1{max-width:900px}.hero-car.car-left{left:0;width:38%}.hero-car.car-center{left:24%;width:48%}.hero-car.car-right{right:0;width:38%}}
-@media(max-width:720px){.hero-showcase{padding:28px;border-radius:24px}.hero-copy h1{font-size:clamp(2.5rem,9vw,4rem)}.hero-pills{gap:8px}.hero-pills span{font-size:.72rem}.hero-visual{min-height:280px}.hero-car{bottom:38px}.hero-car.car-left{width:42%}.hero-car.car-center{left:22%;width:56%}.hero-car.car-right{width:42%}.hero-floor{height:105px}.hero-ribbon.one{width:230px;height:300px;right:28px;top:-18px}.hero-ribbon.two{width:175px;height:260px;right:-10px;top:5px}.hero-ribbon.three{width:310px;height:250px;left:20px;bottom:-120px}}
+@media(max-width:1100px){.hero-showcase{grid-template-columns:1fr;min-height:auto;padding:40px}.hero-visual{min-height:480px}.hero-copy h1{max-width:900px}.hero-image-card{height:360px;max-width:none}.hero-mini-card.card-one{left:12px;bottom:18px}.hero-mini-card.card-two{right:12px;top:18px}}
+@media(max-width:720px){.hero-showcase{padding:28px;border-radius:24px}.hero-copy h1{font-size:clamp(2.5rem,9vw,4rem)}.hero-pills{gap:8px}.hero-pills span{font-size:.72rem}.hero-visual{min-height:420px}.hero-image-card{height:300px;border-radius:22px}.hero-image-badge{left:12px;right:12px;width:fit-content;max-width:calc(100% - 24px)}.hero-image-badge.bottom{bottom:12px}.hero-image-badge.top{top:12px}.hero-mini-card{min-width:auto;width:calc(100% - 24px);left:12px!important;right:12px!important}.hero-mini-card.card-two{top:auto;bottom:92px}.hero-mini-card.card-one{bottom:12px}}
 
 
 
@@ -475,13 +473,13 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
   <div class="container">
     <div class="hero-showcase">
       <div class="hero-copy">
-        <div class="eyebrow">Audi Global Graduate Program · Sales & Marketing Strategy</div>
-        <h1 data-de="Strategie mit Kundenfokus.<br><span class="accent">Future Sales</span> in Bewegung."
-            data-en="Strategy with customer focus.<br><span class="accent">Future Sales</span> in motion."></h1>
-        <p class="lead" data-de="Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen."
-           data-en="I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem."></p>
+        <div class="eyebrow">Audi Global Graduate Program · Sales &amp; Marketing Strategy</div>
+        <h1 data-de='Strategie mit Kundenfokus.<br><span class="accent">Future Sales</span> in Bewegung.'
+            data-en='Strategy with customer focus.<br><span class="accent">Future Sales</span> in motion.'></h1>
+        <p class="lead" data-de='Ich möchte datenbasierte Kunden- und Marktinsights mit Sales Strategy, digitalen Geschäftsmodellen und internationaler Projektarbeit verbinden – mit dem Ziel, neue Wachstumschancen im zukünftigen Vertrieb zu identifizieren und umzusetzen.'
+           data-en='I want to combine data-driven customer and market insights with sales strategy, digital business models and international project work – with the goal of identifying and translating new growth opportunities into the future sales ecosystem.'></p>
         <div class="hero-pills">
-          <span data-de="Customer & Market Insights" data-en="Customer & Market Insights"></span>
+          <span data-de="Customer &amp; Market Insights" data-en="Customer &amp; Market Insights"></span>
           <span data-de="Digital Business Models" data-en="Digital Business Models"></span>
           <span data-de="International Perspective" data-en="International Perspective"></span>
         </div>
@@ -494,79 +492,21 @@ input[type="range"].sim-range{background:linear-gradient(90deg,var(--red) 0%,var
       </div>
 
       <div class="hero-visual" aria-hidden="true">
-        <div class="hero-ribbon one"></div>
-        <div class="hero-ribbon two"></div>
-        <div class="hero-ribbon three"></div>
-        <div class="hero-floor"></div>
-
-        <div class="hero-car car-left">
-          <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <defs>
-              <linearGradient id="carBlue" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#24364e"/>
-                <stop offset="100%" stop-color="#0c1827"/>
-              </linearGradient>
-              <linearGradient id="carBlueGlass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#9aa7b5" stop-opacity="0.55"/>
-                <stop offset="100%" stop-color="#d9e1ea" stop-opacity="0.15"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="258" cy="230" rx="170" ry="12" fill="rgba(0,0,0,.18)"/>
-            <path d="M74 183c18-3 37-15 56-32 25-24 54-45 91-56 41-12 90-15 138-6 38 7 69 21 98 45 18 15 31 31 43 46-11 6-31 9-52 9H119c-20 0-35-1-45-6z" fill="url(#carBlue)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
-            <path d="M185 108c21-22 46-36 79-42 36-6 73-5 104 1 17 4 34 10 48 17 10 5 16 10 21 18-41-1-159-1-252 0z" fill="url(#carBlueGlass)"/>
-            <path d="M103 184h334" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
-            <circle cx="164" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="164" cy="188" r="16" fill="#5d6877"/>
-            <circle cx="382" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="382" cy="188" r="16" fill="#5d6877"/>
-            <path d="M402 146c14 0 25 10 25 24" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
-            <path d="M103 146c-12 2-21 11-24 21" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
-          </svg>
+        <div class="hero-glow"></div>
+        <div class="hero-image-card">
+          <img src="/mnt/data/ghostwriter_images/context/1a40e039-b7d9-59e3-88a8-f12133ae4f71.png" alt="Automotive digital inspiration">
+          <div class="hero-image-badge top" data-de="Inspiriert von modernen Automotive-Websites" data-en="Inspired by modern automotive websites"></div>
+          <div class="hero-image-badge bottom" data-de="Customer Focus · Digital Growth · Future Sales" data-en="Customer Focus · Digital Growth · Future Sales"></div>
         </div>
-
-        <div class="hero-car car-center">
-          <svg viewBox="0 0 520 270" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <defs>
-              <linearGradient id="carRed" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#f03835"/>
-                <stop offset="100%" stop-color="#a50d12"/>
-              </linearGradient>
-              <linearGradient id="carRedGlass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#fff2f2" stop-opacity="0.46"/>
-                <stop offset="100%" stop-color="#e4b8bb" stop-opacity="0.12"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="260" cy="242" rx="188" ry="13" fill="rgba(0,0,0,.22)"/>
-            <path d="M58 188c18-6 36-21 58-42 27-27 57-49 96-61 46-14 100-17 152-8 42 7 74 23 101 46 20 17 33 34 46 53-12 6-34 10-58 10H111c-22 0-39-2-53-7z" fill="url(#carRed)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
-            <path d="M181 110c24-25 53-40 91-47 43-8 86-6 119 1 21 4 40 12 56 23 12 8 18 14 22 22-46-1-177-1-288 1z" fill="url(#carRedGlass)"/>
-            <path d="M105 188h354" stroke="rgba(255,255,255,.18)" stroke-width="3"/>
-            <path d="M143 150c53-5 115-8 178-8 63 0 118 3 167 11" stroke="rgba(255,255,255,.14)" stroke-width="2.5"/>
-            <circle cx="169" cy="193" r="36" fill="#15191f" stroke="rgba(255,255,255,.45)" stroke-width="4"/><circle cx="169" cy="193" r="17" fill="#69727f"/>
-            <circle cx="391" cy="193" r="36" fill="#15191f" stroke="rgba(255,255,255,.45)" stroke-width="4"/><circle cx="391" cy="193" r="17" fill="#69727f"/>
-            <path d="M410 150c16 1 27 11 28 26" stroke="#fff1f1" stroke-width="4" stroke-linecap="round"/>
-            <path d="M107 152c-15 2-25 12-29 23" stroke="#fff1f1" stroke-width="4" stroke-linecap="round"/>
-          </svg>
+        <div class="hero-mini-card card-one">
+          <small>01</small>
+          <strong data-de="Customer Insight" data-en="Customer Insight"></strong>
+          <span data-de="Kundenverhalten verstehen" data-en="Understand customer behaviour"></span>
         </div>
-
-        <div class="hero-car car-right">
-          <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" fill="none">
-            <defs>
-              <linearGradient id="carGrey" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#69727a"/>
-                <stop offset="100%" stop-color="#2d343c"/>
-              </linearGradient>
-              <linearGradient id="carGreyGlass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#edf1f5" stop-opacity="0.42"/>
-                <stop offset="100%" stop-color="#d8dee6" stop-opacity="0.12"/>
-              </linearGradient>
-            </defs>
-            <ellipse cx="258" cy="230" rx="170" ry="12" fill="rgba(0,0,0,.18)"/>
-            <path d="M74 183c18-3 37-15 56-32 25-24 54-45 91-56 41-12 90-15 138-6 38 7 69 21 98 45 18 15 31 31 43 46-11 6-31 9-52 9H119c-20 0-35-1-45-6z" fill="url(#carGrey)" stroke="rgba(255,255,255,.36)" stroke-width="3"/>
-            <path d="M185 108c21-22 46-36 79-42 36-6 73-5 104 1 17 4 34 10 48 17 10 5 16 10 21 18-41-1-159-1-252 0z" fill="url(#carGreyGlass)"/>
-            <path d="M103 184h334" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
-            <circle cx="164" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="164" cy="188" r="16" fill="#5d6877"/>
-            <circle cx="382" cy="188" r="34" fill="#111820" stroke="rgba(255,255,255,.42)" stroke-width="4"/><circle cx="382" cy="188" r="16" fill="#5d6877"/>
-            <path d="M402 146c14 0 25 10 25 24" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
-            <path d="M103 146c-12 2-21 11-24 21" stroke="#e7edf3" stroke-width="4" stroke-linecap="round"/>
-          </svg>
+        <div class="hero-mini-card card-two">
+          <small>02</small>
+          <strong data-de="Strategy Translation" data-en="Strategy Translation"></strong>
+          <span data-de="Insights in Hebel übersetzen" data-en="Translate insights into action levers"></span>
         </div>
       </div>
     </div>
